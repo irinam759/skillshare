@@ -3,7 +3,23 @@ import { Nav, Navbar } from 'react-bootstrap';
 import './SkillNavbar.css';
 
 class SkillNavbar extends React.Component{
-    render() {
+  constructor(props){
+    super(props);
+  }
+  
+      render() {
+        // Show the user managment links conditionally
+        // If activeUser exists,then a user is logged in
+        // If activeUser does not exist - Render login+signup
+        // If activeUser exists - Render signout
+        const loginEl = (! this.props.activeUser) ? <Nav.Link href="/#/login">התחבר</Nav.Link> : null;
+        const signupEl = (! this.props.activeUser) ? <Nav.Link href="/#/signup">הירשם</Nav.Link> : null;
+        const signoutEl = (this.props.activeUser)  ?
+         <Nav.Link href="/#/" onClick={() => this.props.logout()}>
+           התנתק
+           </Nav.Link> : null;
+
+
         return(
             <Navbar bg="light" expand="lg">
             <Navbar.Brand className='skill-nav-brand' href="/#/">SkillShare</Navbar.Brand>
@@ -15,8 +31,9 @@ class SkillNavbar extends React.Component{
                 <Nav.Link href="/#/groups">קבוצות</Nav.Link>
                 </Nav>
                 <Nav className="mr-auto">
-                <Nav.Link href="/#/login">התחבר</Nav.Link>
-                <Nav.Link href="/#/signup">הירשם</Nav.Link>
+                {loginEl}
+                {signupEl}
+               {signoutEl}
                 
               </Nav>
               

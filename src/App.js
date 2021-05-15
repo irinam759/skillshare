@@ -9,17 +9,39 @@ import Groups from './pages/Groups';
 import SkillNavbar from './components/SkillNavbar';
 import React from 'react';
 
+//App is a main component for SkillShare app
+//State:
+//activeUser: Either null, if no user logged in, or a user object if a user is in
+
 class App extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      activeUser:{
+        //activeUser:null
+        id:1,
+        name:'ira',
+        email:'katsirka@gmail.com',
+        pwd:'ira'
+      }
+    }
   }
+
+ logout = () => {
+   this.setState({
+     activeUser:null
+   })
+ } 
   render() {
 
  
   return (
     <HashRouter>
       <Route exact path={['/','/teachers','/groups']}>
-        <SkillNavbar />
+        <SkillNavbar
+         activeUser={this.state.activeUser} 
+        logout={this.logout}
+        />
       </Route>
       
       <Route exact path='/'>
@@ -38,7 +60,7 @@ class App extends React.Component {
         <Signup></Signup>
       </Route>
     
-  //   </HashRouter>
+ </HashRouter>
   );
 }
 }
