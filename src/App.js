@@ -6,18 +6,24 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Teachers from './pages/Teachers';
 import Groups from './pages/Groups';
+import SkillNavbar from './components/SkillNavbar';
+import React from 'react';
 
-function App() {
+class App extends React.Component {
+  constructor(props){
+    super(props);
+  }
+  render() {
+
+ 
   return (
     <HashRouter>
+      <Route exact path={['/','/teachers','/groups']}>
+        <SkillNavbar />
+      </Route>
+      
       <Route exact path='/'>
         <HomePage></HomePage>
-      </Route>
-      <Route exact path='/login'>
-         <Login></Login>
-      </Route>
-      <Route exact path='/signup'>
-        <Signup></Signup>
       </Route>
       <Route exact path='/teachers'>
         <Teachers></Teachers>
@@ -25,10 +31,16 @@ function App() {
       <Route exact path='/groups'>
        <Groups></Groups>
       </Route>
-
+      <Route exact path='/login'>
+         <Login></Login>
+      </Route>
+      <Route exact path='/signup'>
+        <Signup></Signup>
+      </Route>
     
-    </HashRouter>
+  //   </HashRouter>
   );
+}
 }
 
 export default App;
