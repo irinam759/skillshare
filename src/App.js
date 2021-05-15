@@ -8,6 +8,8 @@ import Teachers from './pages/Teachers';
 import Groups from './pages/Groups';
 import SkillNavbar from './components/SkillNavbar';
 import React from 'react';
+import User from './pages/User';
+import { Container } from 'react-bootstrap';
 
 //App is a main component for SkillShare app
 //State:
@@ -37,13 +39,14 @@ class App extends React.Component {
  
   return (
     <HashRouter>
-      <Route exact path={['/','/teachers','/groups']}>
+     
+      <Route exact path={['/','/teachers','/groups','/user']}>
         <SkillNavbar
          activeUser={this.state.activeUser} 
         logout={this.logout}
         />
       </Route>
-      
+      <Container>
       <Route exact path='/'>
         <HomePage></HomePage>
       </Route>
@@ -53,13 +56,16 @@ class App extends React.Component {
       <Route exact path='/groups'>
        <Groups></Groups>
       </Route>
+      <Route exact path='/user'>
+         <User></User>
+      </Route>
       <Route exact path='/login'>
          <Login></Login>
       </Route>
       <Route exact path='/signup'>
         <Signup></Signup>
       </Route>
-    
+      </Container>
  </HashRouter>
   );
 }
