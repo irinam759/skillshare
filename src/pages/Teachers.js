@@ -1,12 +1,23 @@
 import React from 'react';
-import { Col, Form, Row } from 'react-bootstrap';
+import { Card, Col, Form, Row } from 'react-bootstrap';
 
 
 class Teachers extends React.Component{
     constructor(props){
         super(props);
     }
+    
     render(){
+        const teacherCards = this.props.allTeachers.map((teacher)=>{
+           return (<Card key={teacher.id}>
+               {teacher.name}
+           </Card>
+           )
+        });
+        const studyCategories = this.props.allCategories.map((option)=>(
+            <option value={option.id} key={option.id}>{option.title}</option>
+        ));
+        console.log(studyCategories);
         return(
             <div className = "p-teachers">
                 <p>חפש בעל מיומנות/מורה/מאמן</p>
@@ -26,6 +37,7 @@ class Teachers extends React.Component{
                         <Col sm={10}>
                         <Form.Control as="select" >
                         <option>בחר תחום</option>
+                        {studyCategories}
                         </Form.Control>
                         </Col>
                     </Row>
@@ -43,6 +55,8 @@ class Teachers extends React.Component{
                 
                 </Form.Row>
                 </Form>
+
+               {teacherCards}
             </div>
         )
     }

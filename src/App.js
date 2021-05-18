@@ -11,6 +11,9 @@ import React from 'react';
 import User from './pages/User';
 import { Container } from 'react-bootstrap';
 import CreateGroup from './pages/CreateGroup';
+import teachersJson from './data/teachers.json';
+import categoriesJson from './data/categories.json';
+
 
 //App is a main component for SkillShare app
 //State:
@@ -26,7 +29,9 @@ class App extends React.Component {
         name:'ira',
         email:'katsirka@gmail.com',
         pwd:'ira'
-      }
+      },
+      allTeachers:teachersJson,
+      allCategories:categoriesJson
     }
   }
 
@@ -53,7 +58,10 @@ class App extends React.Component {
         activeUser={this.state.activeUser} />
       </Route>
       <Route exact path='/teachers'>
-        <Teachers></Teachers>
+        <Teachers
+         allTeachers={this.state.allTeachers}
+         allCategories={this.state.allCategories}
+         ></Teachers>
       </Route>
       <Route exact path='/groups'>
        <Groups></Groups>
