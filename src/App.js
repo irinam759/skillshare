@@ -49,7 +49,8 @@ class App extends React.Component {
       </Route>
       <Container>
       <Route exact path='/'>
-        <HomePage></HomePage>
+        <HomePage
+        activeUser={this.state.activeUser} />
       </Route>
       <Route exact path='/teachers'>
         <Teachers></Teachers>

@@ -18,6 +18,10 @@ class SkillNavbar extends React.Component{
          <Nav.Link href="/#/" onClick={() => this.props.logout()}>
            התנתק
            </Nav.Link> : null;
+          const userProfile = (this.props.activeUser)  ?
+          <Nav.Link href="/#/user">
+            החשבון שלי
+            </Nav.Link> : null;
 
 
         return(
@@ -27,8 +31,9 @@ class SkillNavbar extends React.Component{
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto">
                 <Nav.Link href="/#/">דף בית</Nav.Link>
-                <Nav.Link href="/#/teachers">מורים</Nav.Link>
-                <Nav.Link href="/#/groups">קבוצות</Nav.Link>
+                <Nav.Link href="/#/teachers">מורים </Nav.Link>
+                <Nav.Link href="/#/groups"> קבוצות</Nav.Link>
+                {userProfile}
                 </Nav>
                 <Nav className="mr-auto">
                 {loginEl}
