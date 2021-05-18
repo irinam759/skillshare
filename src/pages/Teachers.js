@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class Teachers extends React.Component{
     constructor(props){
         super(props);
@@ -7,7 +8,7 @@ class Teachers extends React.Component{
     render(){
         return(
             <div className = "p-teachers">
-                I am teachers
+        
             </div>
         )
     }

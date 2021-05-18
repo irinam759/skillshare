@@ -1,0 +1,17 @@
+.smaller-img{
+    width:50%;
+}
+
+.my-center{
+    text-align: center !important;
+    
+}
+.site-desc{
+    display:block;
+    max-width: 18rem;
+ 
+  
+}
+.dotted-border{
+    border-right:2px dashed lightgrey !important;
+}

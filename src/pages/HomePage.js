@@ -1,6 +1,9 @@
 import React from 'react';
-import { Card, CardDeck, CardGroup, Col, Row } from 'react-bootstrap';
-import './HomePage.css'
+import { Jumbotron, Row } from 'react-bootstrap';
+import './HomePage.css';
+
+
+import MainCard from '../components/MainCard';
 
 class HomePage extends React.Component{
     constructor(props){
@@ -9,49 +12,18 @@ class HomePage extends React.Component{
     render(){
         return(
             <div className = "p-homepage">
-                <Row><h2>מערכת מציאת בעלי מיומנות, מורים, מאמנים ויצירת קבוצות לימוד. </h2></Row>
-                <Row>
+                <Jumbotron className="justify-content-center text-center mx-0 my-0 py-4 bg-white">
+                <h2 class="display-5 text-center">Skill share</h2>
+                    <p class="text-center mx-auto px-sm-0 site-desc">המקום שמחבר אותך לבעלי מיומנויות, מורים או מאמנים כדי ללמוד כל דבר לבד או בקבוצה באיזור שלך.  </p>
+                    
+              
+                </Jumbotron>
+                
+                   <Row className="justify-content-center text-center mx-0 mx-sm-5 px-0 px-sm-5 " >
+                    <MainCard image="./images/Power-of-knowledge.png" text="חפש בעל מיומנות/מורה/מאמן"></MainCard>
+                    <MainCard image="./images/Questions-and-answers.png" text=" חפש קבוצה"></MainCard>
+                    <MainCard image="./images/Community.png" text=" צור קבוצה"></MainCard>       
                    
-                <CardGroup>
-                <Col xs={12} md={4}>
-                <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
-                    <Card.Body>
-                    <Card.Title>Card title</Card.Title>
-                    <Card.Text>
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer. fsfsfs asf dsgsgds.f dgsgs sgsdgsd
-                    </Card.Text>
-                    </Card.Body>
-                </Card>
-                </Col>
-                <Col xs={12} md={4}>
-                <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
-                    <Card.Body>
-                    <Card.Title>Card title</Card.Title>
-                    <Card.Text>
-                        This card has supporting text below as a natural lead-in to additional
-                        content.
-                    </Card.Text>
-                    </Card.Body>
-                
-                </Card>
-                </Col>
-                <Col xs={12} md={4}>
-                <Card>
-                    <Card.Img variant="top" src="holder.js/100px160" />
-                    <Card.Body>
-                    <Card.Title>Card title</Card.Title>
-                    <Card.Text>
-                        This is a wider card with supporting text below as a natural lead-in to
-                        additional content. 
-                    </Card.Text>
-                    </Card.Body>
-                
-                </Card>
-                </Col>
-                </CardGroup>
                 </Row>
                 </div>
         )
