@@ -1,17 +1,17 @@
 import React from 'react';
 
 
-class Teachers extends React.Component{
+class CreateGroup extends React.Component{
     constructor(props){
         super(props);
     }
     render(){
         return(
-            <div className = "p-teachers">
-         I am teachers
+            <div className = "p-create-group">
+         I am Create group
             </div>
         )
     }
 }
 
-export default Teachers;
+export default CreateGroup;
