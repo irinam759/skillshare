@@ -22,12 +22,6 @@ class Teachers extends React.Component{
         });
 
 
-         //Map all cities   
-        //  const cities = this.props.allCities.map((city)=>(
-        //     <option value={city.semel_yeshuv} key={city.semel_yeshuv}>{city.name}</option>
-        // )).sort(this.props.allCities);
-
-
         return(
             <div className = "p-teachers">
                 <h4>חפש בעל מיומנות/מורה/מאמן</h4>
