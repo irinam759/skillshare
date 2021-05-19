@@ -1,0 +1,10 @@
+.wrap-overlay{
+  position:relative
+}
+
+.search-overlay {
+        width: 100%;
+        position: absolute;
+        z-index: 99999;
+        top:3px;
+  }

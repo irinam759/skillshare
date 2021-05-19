@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Form, ListGroup, ListGroupItem, Row } from 'react-bootstrap';
+import { Col, Form, ListGroup } from 'react-bootstrap';
 import './SearchForm.css';
 
 class SearchForm extends React.Component{
@@ -8,7 +8,8 @@ class SearchForm extends React.Component{
         this.state = {
             searchCity:'',
             cityResults:[],
-            chosenCity:''
+            chosenCity:'', 
+            selectedCategory:''
         }
     }   
 
@@ -18,8 +19,8 @@ class SearchForm extends React.Component{
         if(a.title > b.title) {return 1;}
         return 0; 
     }   
-    //Function of searching city by typing
 
+    //Function of searching city by typing
     searchCity=(event)=>{
         this.setState({
             searchCity:event.target.value,
@@ -28,13 +29,24 @@ class SearchForm extends React.Component{
                 else {return false}
             })
         });
-
-    //     const newCities = this.props.allCities.map((city) => {
-    //                              return ({semel_yeshuv:city.semel_yeshuv, name:city.name});
-    //                   });
-        
     }
-           
+
+    // Function update input value and state when city is selected 
+    onCitySelected = (index,name)=>{
+    this.setState({
+        chosenCity:index,
+        cityResults:[],
+        searchCity:name
+    })
+}    
+
+    // Function - select study category
+    selectCategory=(category)=>{
+        
+        console.log(category)
+    }
+
+
     render(){
        
         // Map all study categories
@@ -42,20 +54,20 @@ class SearchForm extends React.Component{
         const studyCategories = this.props.allCategories
         .sort(this.sortByName)
         .map((option)=>(
-            <option value={option.id} key={option.id}>{option.title}</option>
+            <option value={option.id} key={option.id} onClick={()=>{this.selectCategory(option.id)}}>{option.title}</option>
         ));
         
-//Map all cities  
+        //Map all cities  
          const listCities = this.state.cityResults.map((city)=>{
-           // return <ListGroup.Item onClick={(() => this.props.onResultSelected(index))} key={index}>{res.title}</ListGroup.Item>
-                return <ListGroup.Item key={city.semel_yeshuv}>{city.name}</ListGroup.Item>
+                return <ListGroup.Item action
+                onClick={()=>{this.onCitySelected(city.semel_yeshuv,city.name)}}
+                 key={city.semel_yeshuv}  >{city.name}</ListGroup.Item>
          });
          
         
 
 
         return(
-            
             <Form>
             <Form.Row>
             <Form.Group as={Col} md={6} sm={12} xs={12} controlId="formFreeSearch">
@@ -68,18 +80,20 @@ class SearchForm extends React.Component{
                     </Form.Control>
             </Form.Group>
             <Form.Group as={Col} md={3} sm={6} xs={12} >
-                    <Form.Control 
+                  
+                    <Form.Control
                     value={this.state.searchCity}
                     onChange={this.searchCity}
-                    autocomplete="off"
+                    autoComplete="off"
                      type="text" 
                      placeholder="חפש עיר" 
                      name="search-city" 
                      id="search-city"  />
-                     <ListGroup variant="flush" className="search-overlay">
+                       <div className = "wrap-overlay">
+                     <ListGroup variant="flush" className="search-overlay" >
                          {listCities}
                      </ListGroup>
-
+                     </div>
                 </Form.Group>
              </Form.Row>
             </Form>
