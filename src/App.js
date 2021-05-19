@@ -13,6 +13,7 @@ import { Container } from 'react-bootstrap';
 import CreateGroup from './pages/CreateGroup';
 import teachersJson from './data/teachers.json';
 import categoriesJson from './data/categories.json';
+import citiesJson from './data/israel-cities.json';
 
 
 //App is a main component for SkillShare app
@@ -31,7 +32,8 @@ class App extends React.Component {
         pwd:'ira'
       },
       allTeachers:teachersJson,
-      allCategories:categoriesJson
+      allCategories:categoriesJson,
+      allCities:citiesJson
     }
   }
 
@@ -61,6 +63,7 @@ class App extends React.Component {
         <Teachers
          allTeachers={this.state.allTeachers}
          allCategories={this.state.allCategories}
+         allCities={this.state.allCities}
          ></Teachers>
       </Route>
       <Route exact path='/groups'>

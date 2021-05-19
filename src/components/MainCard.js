@@ -1,7 +1,4 @@
 import React from 'react';
-// import imgCard3 from '../images/Power-of-knowledge.png';
-// import imgCard1 from '../images/Questions-and-answers.png';
-// import imgCard2 from '../images/Community.png';
 import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 

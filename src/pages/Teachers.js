@@ -1,61 +1,41 @@
 import React from 'react';
 import { Card, Col, Form, Row } from 'react-bootstrap';
+import SearchForm from '../components/SearchForm';
 
 
 class Teachers extends React.Component{
     constructor(props){
         super(props);
     }
+
     
+    
+
     render(){
+        
+        //Create teachers cards
         const teacherCards = this.props.allTeachers.map((teacher)=>{
            return (<Card key={teacher.id}>
                {teacher.name}
            </Card>
            )
         });
-        const studyCategories = this.props.allCategories.map((option)=>(
-            <option value={option.id} key={option.id}>{option.title}</option>
-        ));
-        console.log(studyCategories);
+
+
+         //Map all cities   
+        //  const cities = this.props.allCities.map((city)=>(
+        //     <option value={city.semel_yeshuv} key={city.semel_yeshuv}>{city.name}</option>
+        // )).sort(this.props.allCities);
+
+
         return(
             <div className = "p-teachers">
-                <p>חפש בעל מיומנות/מורה/מאמן</p>
-                <Form>
-                <Form.Row>
-                    <Form.Group as={Col} controlId="formFreeSearch">
-                    <Row>
-                        <Form.Label column sm={2} >חפש</Form.Label>
-                        <Col sm={10}>
-                        <Form.Control type="text" placeholder="חיפוש חופשי" />
-                        </Col>
-                    </Row>
-                    </Form.Group>
-                    <Form.Group as={Col} controlId="formStudyCategory">
-                    <Row>
-                        <Form.Label column sm={2} >תחום</Form.Label>
-                        <Col sm={10}>
-                        <Form.Control as="select" >
-                        <option>בחר תחום</option>
-                        {studyCategories}
-                        </Form.Control>
-                        </Col>
-                    </Row>
-                    </Form.Group>
-                    <Form.Group as={Col} controlId="formArea">
-                    <Row>
-                        <Form.Label column sm={2} >איזור</Form.Label>
-                        <Col sm={10}>
-                        <Form.Control as ="select" >
-                        <option>בחר איזור</option>
-                        </Form.Control>
-                        </Col>
-                    </Row>
-                    </Form.Group>
-                
-                </Form.Row>
-                </Form>
-
+                <h4>חפש בעל מיומנות/מורה/מאמן</h4>
+             
+                <SearchForm 
+                allCategories={this.props.allCategories}
+                allCities={this.props.allCities}
+                ></SearchForm>
                {teacherCards}
             </div>
         )
