@@ -29,6 +29,7 @@ class SearchForm extends React.Component{
                 else {return false}
             })
         });
+       
     }
 
     // Function update input value and state when city is selected 
@@ -38,6 +39,7 @@ class SearchForm extends React.Component{
         cityResults:[],
         searchCity:name
     })
+    this.props.onCitySelected(index);
 }    
 
     // Function - select study category

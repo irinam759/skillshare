@@ -32,7 +32,6 @@ class App extends React.Component {
         pwd:'ira'
       },
       allTeachers:usersJson.filter((user)=>{
-        console.log(user.isTeacher)
         if (user.isTeacher){return user}
       }),
       // allTeachers: (usersJson.isTeacher) ? 
