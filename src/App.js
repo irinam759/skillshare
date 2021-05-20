@@ -11,7 +11,7 @@ import React from 'react';
 import User from './pages/User';
 import { Container } from 'react-bootstrap';
 import CreateGroup from './pages/CreateGroup';
-import teachersJson from './data/teachers.json';
+import usersJson from './data/users.json';
 import categoriesJson from './data/categories.json';
 import citiesJson from './data/israel-cities.json';
 
@@ -31,7 +31,11 @@ class App extends React.Component {
         email:'katsirka@gmail.com',
         pwd:'ira'
       },
-      allTeachers:teachersJson,
+      allTeachers:usersJson.filter((user)=>{
+        console.log(user.isTeacher)
+        if (user.isTeacher){return user}
+      }),
+      // allTeachers: (usersJson.isTeacher) ? 
       allCategories:categoriesJson,
       allCities:citiesJson
     }

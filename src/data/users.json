@@ -1,0 +1,7 @@
+[
+    {"id":1,"name":"לינה בוסקילה","email":"lina@yahoo.com","pw":"123", "image":"profile.png","city":4,"isTeacher":true,"categoryId":1,"desc":"אוכל מרוקאי ביתי", "about":"אני מבשלת מגיל צעיר, למדתי מאמא שלי" },
+    {"id":2,"name":"עעע ","email":"lina@yahoo.com","pw":"123", "image":"profile.png","city":4,"isTeacher":true,"categoryId":2,"desc":"אוכל מרוקאי ביתי", "about":"אני מבשלת מגיל צעיר, למדתי מאמא שלי" },
+    {"id":3,"name":"משמ","email":"lina@yahoo.com","pw":"123", "image":"profile.png","city":5,"isTeacher":true,"categoryId":2,"desc":"אוכל מרוקאי ביתי", "about":"אני מבשלת מגיל צעיר, למדתי מאמא שלי" },
+    {"id":4,"name":"ההה ההה","email":"lina@yahoo.com","pw":"123", "image":"profile.png","city":12,"isTeacher":true,"categoryId":3,"desc":"אוכל מרוקאי ביתי", "about":"אני מבשלת מגיל צעיר, למדתי מאמא שלי" },
+    {"id":5,"name":"שרה","email":"lina@yahoo.com","pw":"123", "image":"profile.png","city":5,"isTeacher":false,"categoryId":3}
+]

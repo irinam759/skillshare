@@ -45,7 +45,8 @@ class SearchForm extends React.Component{
         this.setState({
             selectCategory:event.target.value
         })
-  
+        this.props.onCategorySelected(event.target.value);
+        
     }
 
 
@@ -77,7 +78,7 @@ class SearchForm extends React.Component{
             </Form.Group>
             <Form.Group as={Col} md={3} sm={6} xs={12} controlId="formStudyCategory">
                     <Form.Control as="select" onChange={this.selectCategory}>
-                    <option>בחר תחום</option>
+                    <option value="0" id="0">בחר תחום</option>
                     {studyCategories}
                     </Form.Control>
             </Form.Group>
