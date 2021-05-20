@@ -41,9 +41,11 @@ class SearchForm extends React.Component{
 }    
 
     // Function - select study category
-    selectCategory=(category)=>{
-        
-        console.log(category)
+    selectCategory=(event)=>{
+        this.setState({
+            selectCategory:event.target.value
+        })
+  
     }
 
 
@@ -54,7 +56,7 @@ class SearchForm extends React.Component{
         const studyCategories = this.props.allCategories
         .sort(this.sortByName)
         .map((option)=>(
-            <option value={option.id} key={option.id} onClick={()=>{this.selectCategory(option.id)}}>{option.title}</option>
+            <option value={option.id} key={option.id} >{option.title}</option>
         ));
         
         //Map all cities  
@@ -74,7 +76,7 @@ class SearchForm extends React.Component{
                 <Form.Control type="text" placeholder="חיפוש חופשי" />
             </Form.Group>
             <Form.Group as={Col} md={3} sm={6} xs={12} controlId="formStudyCategory">
-                    <Form.Control as="select" >
+                    <Form.Control as="select" onChange={this.selectCategory}>
                     <option>בחר תחום</option>
                     {studyCategories}
                     </Form.Control>
