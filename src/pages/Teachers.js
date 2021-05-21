@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Form, Row } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 import SearchForm from '../components/SearchForm';
 
 
@@ -7,50 +7,75 @@ class Teachers extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            // resultsByCategory:this.props.allTeachers,
             resultsByCategory:[],
-            resultsByCity:[]
+            resultsByCity:[],
+            chosenCity:0,
+            chosenCategory:0
             
         }
     }
 
 citySelected = (index) => {
-    console.log('city: '+index);
+  
     const teachersByCity = this.props.allTeachers.filter((teacher)=>{
-        return (teacher.city==index) ? teacher : false
+        return (String(teacher.city)===index) ? teacher : false
    
 });
 this.setState({
-    resultsByCity: teachersByCity
+    resultsByCity: teachersByCity,
+    chosenCity:index
   
 })
-console.log(teachersByCity)
+
 } 
 
 categorySelected = (index) => {
-    
-    const filteredTeachers = this.props.allTeachers.filter((teacher)=>{
-            return (String(teacher.categoryId)===index) ? teacher : false
-       
-    });
+    console.log('category index'+index+typeof(index))
+    const filteredTeachers = (index!=='0')?
+    this.props.allTeachers.filter((teacher)=>{
+        return (String(teacher.categoryId)===index) ? teacher : false
+   
+}) :this.props.allTeachers ;
    
     this.setState({
-         resultsByCategory: filteredTeachers
+         resultsByCategory: filteredTeachers,
+         chosenCategory:index
        
     })
-    
+   
 } 
-    
+
+// Function that compares both category and city arrays
+// If both selected returns array that includes category and city chosen
+// If none selected  returns all the teachers
+// Else if city or category selected, returns the selected results
+
+allFilter=()=>{
+    const chosenCity = this.state.chosenCity;
+    const chosenCategory = this.state.chosenCategory;
+   
+    if(chosenCity && chosenCategory){
+        return this.props.allTeachers
+        .filter((teacher)=>this.state.resultsByCity.includes(teacher) && this.state.resultsByCategory.includes(teacher));
+
+    }
+    if(!chosenCity && !chosenCategory){
+        console.log(this.props.allTeachers);
+        return this.props.allTeachers
+    }
+    else{
+       
+    return this.props.allTeachers
+        .filter((teacher)=>this.state.resultsByCity.includes(teacher) || this.state.resultsByCategory.includes(teacher));
+    }
+}
 
     render(){
-
-        const allResults =this.props.allTeachers.filter((teacher)=>this.state.resultsByCity.includes(teacher) || this.state.resultsByCategory.includes(teacher));
-
-
-        //Create teachers cards
-          const teacherCards = this.state.resultsByCategory.map((teacher)=>{
+        const allResults = this.allFilter();
+       //Create teachers cards
+            const teacherCards =allResults.map((teacher)=>{
             const teacherCategory = this.props.allCategories.find(element =>  (element.id === teacher.categoryId));
-            const teacherCity = this.props.allCities.find(element =>  (element.semel_yeshuv == teacher.city));
+            const teacherCity = this.props.allCities.find(element =>  (element.semel_yeshuv === String(teacher.city)));
           
                 return (
             <Col key={teacher.id} lg={3} md={6} sm={12}>

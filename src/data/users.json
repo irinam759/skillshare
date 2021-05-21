@@ -1,7 +1,13 @@
 [
-    {"id":1,"name":"לינה בוסקילה","email":"lina@yahoo.com","pw":"123", "image":"profile.png","city":182,"isTeacher":true,"categoryId":1,"desc":"אוכל מרוקאי ביתי", "about":"אני מבשלת מגיל צעיר, למדתי מאמא שלי" },
-    {"id":2,"name":"עעע ","email":"lina@yahoo.com","pw":"123", "image":"profile.png","city":819,"isTeacher":true,"categoryId":2,"desc":"אוכל מרוקאי ביתי", "about":"אני מבשלת מגיל צעיר, למדתי מאמא שלי" },
-    {"id":3,"name":"משמ","email":"lina@yahoo.com","pw":"123", "image":"profile.png","city":1275,"isTeacher":true,"categoryId":2,"desc":"אוכל מרוקאי ביתי", "about":"אני מבשלת מגיל צעיר, למדתי מאמא שלי" },
-    {"id":4,"name":"ההה ההה","email":"lina@yahoo.com","pw":"123", "image":"profile.png","city":968,"isTeacher":true,"categoryId":3,"desc":"אוכל מרוקאי ביתי", "about":"אני מבשלת מגיל צעיר, למדתי מאמא שלי" },
-    {"id":5,"name":"שרה","email":"lina@yahoo.com","pw":"123", "image":"profile.png","city":932,"isTeacher":false,"categoryId":3}
+    {"id":1,"name":"לינה בוסקילה","email":"lina@yahoo.com","pw":"123", "image":"profile.png","city":3000,"isTeacher":true,"categoryId":2,"desc":"אוכל מרוקאי ביתי", "about":"אני מבשלת מגיל צעיר, למדתי מאמא שלי" },
+    {"id":2,"name":"מינה פרץ ","email":"minap@yahoo.com","pw":"123", "image":"profile.png","city":3000,"isTeacher":true,"categoryId":2,"desc":"המטבח התימני", "about":"20 שנה אני מבשלת אוכל תימני" },
+    {"id":3,"name":"אדווה אשכנזי","email":"adva@yahoo.com","pw":"123", "image":"profile.png","city":4000,"isTeacher":true,"categoryId":2,"desc":"אוכל מרוקאי ", "about":"אלמד אותך לבשל אוכל הכי טעים ואוטנטי!" },
+    {"id":4,"name":"עלמה כהן","email":"almacohen@yahoo.com","pw":"123", "image":"profile.png","city":3000,"isTeacher":true,"categoryId":1,"desc":"לימוד רישום וציור בכל הרמות", "about":"אני בוגרת בצלאל באמנות, מציגה ופועלת בתחום האמנות העכשווית. " },
+    {"id":5,"name":"לינוי וולקוב","email":"linoi@yahoo.com","pw":"123", "image":"profile.png","city":4000,"isTeacher":true,"categoryId":1,"desc":"רישום, הכנת תיק עבודות", "about":"אני ציירת ומאיירת, בוגרת המדרשה. ניסיון רב בהכנת תיק עבודות לקבלה ללימודים, הדרכה ברישום " },
+    {"id":6,"name":"לינה בוסקילה","email":"lina@yahoo.com","pw":"123", "image":"profile.png","city":3000,"isTeacher":true,"categoryId":2,"desc":"אוכל מרוקאי ביתי", "about":"אני מבשלת מגיל צעיר, למדתי מאמא שלי" },
+    {"id":7,"name":"מינה פרץ ","email":"minap@yahoo.com","pw":"123", "image":"profile.png","city":3000,"isTeacher":true,"categoryId":2,"desc":"המטבח התימני", "about":"20 שנה אני מבשלת אוכל תימני" },
+    {"id":8,"name":"אדווה אשכנזי","email":"adva@yahoo.com","pw":"123", "image":"profile.png","city":4000,"isTeacher":true,"categoryId":2,"desc":"אוכל מרוקאי ", "about":"אלמד אותך לבשל אוכל הכי טעים ואוטנטי!" },
+    {"id":9,"name":"עלמה כהן","email":"almacohen@yahoo.com","pw":"123", "image":"profile.png","city":3000,"isTeacher":true,"categoryId":1,"desc":"לימוד רישום וציור בכל הרמות", "about":"אני בוגרת בצלאל באמנות, מציגה ופועלת בתחום האמנות העכשווית. " },
+    {"id":10,"name":"לינוי וולקוב","email":"linoi@yahoo.com","pw":"123", "image":"profile.png","city":4000,"isTeacher":true,"categoryId":1,"desc":"רישום, הכנת תיק עבודות", "about":"אני ציירת ומאיירת, בוגרת המדרשה. ניסיון רב בהכנת תיק עבודות לקבלה ללימודים, הדרכה ברישום " },
+    {"id":11,"name":"שרה","email":"lina@yahoo.com","pw":"123", "image":"profile.png","city":932,"isTeacher":false,"categoryId":3}
 ]

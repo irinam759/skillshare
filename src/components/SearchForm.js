@@ -7,9 +7,7 @@ class SearchForm extends React.Component{
         super(props);
         this.state = {
             searchCity:'',
-            cityResults:[],
-            chosenCity:'', 
-            selectedCategory:''
+            cityResults:[]
         }
     }   
 
@@ -29,17 +27,22 @@ class SearchForm extends React.Component{
                 else {return false}
             })
         });
-       
+        if(event.target.value===''){
+            this.props.onCitySelected(0);
+        }
+      
     }
 
     // Function update input value and state when city is selected 
     onCitySelected = (index,name)=>{
     this.setState({
-        chosenCity:index,
+       
         cityResults:[],
         searchCity:name
     })
+  
     this.props.onCitySelected(index);
+    
 }    
 
     // Function - select study category
@@ -48,7 +51,7 @@ class SearchForm extends React.Component{
             selectCategory:event.target.value
         })
         this.props.onCategorySelected(event.target.value);
-        
+        // console.log('category: '+event.target.value)
     }
 
 
