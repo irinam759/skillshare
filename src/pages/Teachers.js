@@ -83,10 +83,10 @@ allFilter=()=>{
                     // xs={12} md={4} className="px-0 my-3 
             <Col key={teacher.id} xs={12} sm={12} md={6} lg={3} className="">
                 <Card className="mb-2">
-                {/* <Card.Header>{teacher.categoryId}</Card.Header> */}
                 <Card.Img variant="top" src={`./images/img-profile/${teacher.image}`} />
                 <Card.Body>
                     <Card.Title>{teacher.name}</Card.Title>
+                  
                     <div className="details">
                      <CardSubtitles text="עיר:" desc={teacherCity.name}></CardSubtitles>
                      <CardSubtitles text="תחום:" desc={teacherCategory.title}></CardSubtitles>
@@ -97,10 +97,10 @@ allFilter=()=>{
                     <Card.Text>
                 {teacher.about}              
                     </Card.Text>
-                  
+                    <Button variant="outline-primary">פרטים</Button>
                     
                 </Card.Body> 
-                <Card.Footer><Button variant="primary">הצטרף לקבוצה</Button></Card.Footer>
+                <Card.Footer></Card.Footer>
                     
                     
                     </Card>
