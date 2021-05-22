@@ -76,6 +76,7 @@ class SearchForm extends React.Component{
 
 
         return(
+            
             <Form>
             <Form.Row>
             <Form.Group as={Col} md={6} sm={12} xs={12} controlId="formFreeSearch">

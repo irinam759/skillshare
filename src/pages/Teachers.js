@@ -78,7 +78,9 @@ allFilter=()=>{
             const teacherCity = this.props.allCities.find(element =>  (element.semel_yeshuv === String(teacher.city)));
           
                 return (
-            <Col key={teacher.id} lg={3} md={6} sm={12}>
+                    //lg={3} md={6} sm={12}
+                    // xs={12} md={4} className="px-0 my-3 
+            <Col key={teacher.id} xs={12} sm={12} md={6} lg={3} className="px-2 my-3 ">
                 <Card >
                 {/* <Card.Header>{teacher.categoryId}</Card.Header> */}
                 <Card.Img variant="top" src={`./images/${teacher.image}`} />
@@ -104,15 +106,18 @@ allFilter=()=>{
 
         return(
             <div className = "p-teachers">
-                <h6>חפש בעל מיומנות/מורה/מאמן</h6>
-             
+                 <Row className="p-3">
+                <h6>{this.props.header}</h6>
+                </Row>
+               
                 <SearchForm 
                 allCategories={this.props.allCategories}
                 allCities={this.props.allCities}
                 onCitySelected = {this.citySelected}
                 onCategorySelected = {this.categorySelected}
-                ></SearchForm>
-                <Row>
+                ></SearchForm> 
+              
+                <Row className=" px-sm-5">
                {teacherCards}
                </Row>
             </div>

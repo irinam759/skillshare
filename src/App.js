@@ -9,11 +9,12 @@ import Groups from './pages/Groups';
 import SkillNavbar from './components/SkillNavbar';
 import React from 'react';
 import User from './pages/User';
-import { Container } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import CreateGroup from './pages/CreateGroup';
 import usersJson from './data/users.json';
 import categoriesJson from './data/categories.json';
 import citiesJson from './data/israel-cities.json';
+import Footer from './components/Footer';
 
 
 //App is a main component for SkillShare app
@@ -50,14 +51,15 @@ class App extends React.Component {
  
   return (
     <HashRouter>
-     
+    
+   
       <Route exact path={['/','/teachers','/groups','/user','/createGroup']}>
         <SkillNavbar
          activeUser={this.state.activeUser} 
         logout={this.logout}
         />
       </Route>
-      <Container>
+      <Container className="px-md-3 px-lg-5"> 
       <Route exact path='/'>
         <HomePage
         activeUser={this.state.activeUser} />
@@ -67,6 +69,7 @@ class App extends React.Component {
          allTeachers={this.state.allTeachers}
          allCategories={this.state.allCategories}
          allCities={this.state.allCities}
+         header={'חפש בעל מיומנות'}
          ></Teachers>
       </Route>
       <Route exact path='/groups'>
@@ -84,7 +87,15 @@ class App extends React.Component {
       <Route exact path='/createGroup'>
        <CreateGroup></CreateGroup>
       </Route>
+     
+     
+      {/* <Route exact path={['/','/teachers','/groups','/user','/createGroup']}>
+       
+        <Footer></Footer>
+        
+      </Route> */}
       </Container>
+      
  </HashRouter>
   );
 }

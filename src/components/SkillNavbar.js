@@ -29,7 +29,7 @@ class SkillNavbar extends React.Component{
             <Navbar.Brand className='skill-nav-brand' href="/#/">SkillShare</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="ml-auto">
+              <Nav className="ml-auto ">
                 <Nav.Link href="/#/">דף בית</Nav.Link>
                 <Nav.Link href="/#/teachers">מורים </Nav.Link>
                 <Nav.Link href="/#/groups"> קבוצות</Nav.Link>

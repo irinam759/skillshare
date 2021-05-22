@@ -3,6 +3,7 @@ import { Button, Col, Jumbotron, Row } from 'react-bootstrap';
 import './HomePage.css';
 import MainCard from '../components/MainCard';
 
+
 class HomePage extends React.Component{
     constructor(props){
         super(props);
@@ -28,15 +29,17 @@ checkLogin=()=>{
                     <p className="text-center mx-auto px-sm-0 d-block site-desc">המקום שמחבר אותך לבעלי מיומנויות, מורים או מאמנים כדי ללמוד כל דבר לבד או בקבוצה באיזור שלך.  </p>
                 </Jumbotron>
                 
-                <Row className="justify-content-center text-center mx-0 mx-sm-5 px-0 px-sm-5 " >
+                <Row className="justify-content-center text-center mx-lg-5 mx-md-4 mx-sm-3 mx-xs-0" >
+                {/* */}
                     <MainCard image="./images/Questions-and-answers.png" text="חפש בעל מיומנות/מורה/מאמן" page="./Teachers"></MainCard>
                     <MainCard image="./images/Community.png" text=" חפש קבוצה" page="./Groups"></MainCard>
                     <MainCard image="./images/Power-of-knowledge.png" text=" צור קבוצה" page="./CreateGroup"></MainCard>       
                 </Row>
 
-                <Row className="justify-content-center text-center mx-0 mt-4 mx-sm-5 px-0 px-sm-5 " >
+                <Row className="justify-content-center text-center mx-0 mt-4 px-0 px-sm-5 " >
                   {loginEl}
                 </Row>
+                
 
                 </div>
         )

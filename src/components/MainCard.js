@@ -8,10 +8,10 @@ class MainCard extends React.Component{
       }
 render(){
     return(
-        <Col xs={12} md={4} className="px-0 my-3 " >
+        <Col xs={12} sm={6} md={4} className="px-xs-0 px-sm-0 px-md-3 px-lg-4 my-3 " >
                 <Card className="h-100 border-0">
                    <Link to={this.props.page} className="text-center"> 
-                   <Card.Img className=" smaller-img mx-auto "  variant="top" src={this.props.image} />
+                   <Card.Img className="p-0 mx-auto " style={{"width":"80%"}} variant="top" src={this.props.image} />
                     <Card.Text className="text-center">
                     {this.props.text} 
                     </Card.Text>
