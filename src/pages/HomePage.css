@@ -1,11 +1,9 @@
-.smaller-img{
-    width:50%;
+.logo{
+   /* font-family: 'Emilys Candy', cursive; */
+font-family: 'Rufina', serif;
+  
 }
 
-.my-center{
-    text-align: center !important;
-    
-}
 .site-desc{
    margin-bottom:0px;
     max-width: 24rem;

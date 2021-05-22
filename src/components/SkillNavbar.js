@@ -26,7 +26,7 @@ class SkillNavbar extends React.Component{
 
         return(
             <Navbar bg="light" expand="lg">
-            <Navbar.Brand className='skill-nav-brand' href="/#/">SkillShare</Navbar.Brand>
+            <Navbar.Brand className='ml-3 logo' href="/#/">SkillShare</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto ">

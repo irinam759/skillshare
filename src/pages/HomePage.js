@@ -4,6 +4,7 @@ import './HomePage.css';
 import MainCard from '../components/MainCard';
 
 
+
 class HomePage extends React.Component{
     constructor(props){
         super(props);
@@ -25,15 +26,15 @@ checkLogin=()=>{
         return(
             <div className = "p-homepage">
                 <Jumbotron className="justify-content-center text-center mx-0 my-0 py-4 bg-white">
-                    <h2 className="display-5 text-center">SkillShare</h2>
+                    <h2 className="display-5 text-center logo">SkillShare</h2>
                     <p className="text-center mx-auto px-sm-0 d-block site-desc">המקום שמחבר אותך לבעלי מיומנויות, מורים או מאמנים כדי ללמוד כל דבר לבד או בקבוצה באיזור שלך.  </p>
                 </Jumbotron>
                 
-                <Row className="justify-content-center text-center mx-lg-5 mx-md-4 mx-sm-3 mx-xs-0" >
+                <Row className="justify-content-center text-center px-lg-5 mx-lg-5 mx-md-4 mx-sm-3 mx-xs-0" >
                 {/* */}
-                    <MainCard image="./images/Questions-and-answers.png" text="חפש בעל מיומנות/מורה/מאמן" page="./Teachers"></MainCard>
-                    <MainCard image="./images/Community.png" text=" חפש קבוצה" page="./Groups"></MainCard>
-                    <MainCard image="./images/Power-of-knowledge.png" text=" צור קבוצה" page="./CreateGroup"></MainCard>       
+                    <MainCard image="./images/Questions-and-answers.png" text="חפש בעל מיומנות/מורה/מאמן" page="./Teachers" color="card-red"></MainCard>
+                    <MainCard image="./images/Community.png" text=" חפש קבוצה" page="./Groups" color="card-blue"></MainCard>
+                    <MainCard image="./images/Power-of-knowledge.png" text=" צור קבוצה" page="./CreateGroup" color="card-yellow"></MainCard>       
                 </Row>
 
                 <Row className="justify-content-center text-center mx-0 mt-4 px-0 px-sm-5 " >

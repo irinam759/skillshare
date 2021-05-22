@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Col, Row, Button} from 'react-bootstrap';
 import CardSubtitles from '../components/CardSubtitles';
 import SearchForm from '../components/SearchForm';
+import './Teachers.css';
 
 
 class Teachers extends React.Component{
@@ -81,8 +82,8 @@ allFilter=()=>{
                 return (
                     //lg={3} md={6} sm={12}
                     // xs={12} md={4} className="px-0 my-3 
-            <Col key={teacher.id} xs={12} sm={12} md={6} lg={3} className="">
-                <Card className="mb-2">
+            <Col key={teacher.id} xs={12} sm={12} md={6} lg={3} >
+                <Card className="mb-2" className="teacher-card">
                 <Card.Img variant="top" src={`./images/img-profile/${teacher.image}`} />
                 <Card.Body>
                     <Card.Title>{teacher.name}</Card.Title>
