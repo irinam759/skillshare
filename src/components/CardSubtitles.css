@@ -1,0 +1,13 @@
+
+.details{
+    margin-bottom: 1.4rem;}
+.details h6, .details div{
+    margin-bottom:0.1rem;
+  }
+  .details-text{
+    display: inline-block;
+    font-size: 1rem;
+   
+      font-weight: normal;
+      line-height: 1.2;
+  }

@@ -79,16 +79,16 @@ class SearchForm extends React.Component{
             
             <Form>
             <Form.Row>
-            <Form.Group as={Col} md={6} sm={12} xs={12} controlId="formFreeSearch">
+            <Form.Group as={Col} lg={4} md={6} sm={6} xs={12} controlId="formFreeSearch">
                 <Form.Control type="text" placeholder="חיפוש חופשי" />
             </Form.Group>
-            <Form.Group as={Col} md={3} sm={6} xs={12} controlId="formStudyCategory">
+            <Form.Group as={Col} lg={4} md={6} sm={6} xs={12} controlId="formStudyCategory">
                     <Form.Control as="select" onChange={this.selectCategory}>
                     <option value="0" id="0">בחר תחום</option>
                     {studyCategories}
                     </Form.Control>
             </Form.Group>
-            <Form.Group as={Col} md={3} sm={6} xs={12} >
+            <Form.Group as={Col}  lg={4} md={12} sm={12} xs={12} >
                   
                     <Form.Control
                     value={this.state.searchCity}

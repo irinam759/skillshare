@@ -69,7 +69,7 @@ class App extends React.Component {
          allTeachers={this.state.allTeachers}
          allCategories={this.state.allCategories}
          allCities={this.state.allCities}
-         header={'חפש בעל מיומנות'}
+         header={'חפש בעל מיומנות/מורה/מאמן'}
          ></Teachers>
       </Route>
       <Route exact path='/groups'>

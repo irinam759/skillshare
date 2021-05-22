@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Row, Button} from 'react-bootstrap';
+import CardSubtitles from '../components/CardSubtitles';
 import SearchForm from '../components/SearchForm';
 
 
@@ -80,22 +81,26 @@ allFilter=()=>{
                 return (
                     //lg={3} md={6} sm={12}
                     // xs={12} md={4} className="px-0 my-3 
-            <Col key={teacher.id} xs={12} sm={12} md={6} lg={3} className="px-2 my-3 ">
-                <Card >
+            <Col key={teacher.id} xs={12} sm={12} md={6} lg={3} className="">
+                <Card className="mb-2">
                 {/* <Card.Header>{teacher.categoryId}</Card.Header> */}
-                <Card.Img variant="top" src={`./images/${teacher.image}`} />
+                <Card.Img variant="top" src={`./images/img-profile/${teacher.image}`} />
                 <Card.Body>
                     <Card.Title>{teacher.name}</Card.Title>
-                    <Card.Subtitle>{teacherCategory.title}, {teacher.desc}</Card.Subtitle>
-                    <Card.Text>עיר: {teacherCity.name}</Card.Text> 
+                    <div className="details">
+                     <CardSubtitles text="עיר:" desc={teacherCity.name}></CardSubtitles>
+                     <CardSubtitles text="תחום:" desc={teacherCategory.title}></CardSubtitles>
+                     <CardSubtitles text="התמחות:" desc={teacher.desc}></CardSubtitles>
+                    </div>
+                   
+                  
                     <Card.Text>
-                {teacher.about}
-
-                
+                {teacher.about}              
                     </Card.Text>
-                    {/* <Button variant="primary">Go somewhere</Button> */}
-                </Card.Body>
-
+                  
+                    
+                </Card.Body> 
+                <Card.Footer><Button variant="primary">הצטרף לקבוצה</Button></Card.Footer>
                     
                     
                     </Card>
@@ -106,18 +111,19 @@ allFilter=()=>{
 
         return(
             <div className = "p-teachers">
-                 <Row className="p-3">
-                <h6>{this.props.header}</h6>
+                 <Row className="pt-3 mb-3 mx-0">
+                <h5>{this.props.header}</h5>
                 </Row>
                
+              
                 <SearchForm 
                 allCategories={this.props.allCategories}
                 allCities={this.props.allCities}
                 onCitySelected = {this.citySelected}
                 onCategorySelected = {this.categorySelected}
                 ></SearchForm> 
-              
-                <Row className=" px-sm-5">
+             
+                <Row className="">
                {teacherCards}
                </Row>
             </div>
