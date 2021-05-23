@@ -32,7 +32,7 @@ class Login extends React.Component{
                 return true
             }
         });
-        console.log(foundUser);
+        
         // if(!foundUser.email){
         //     alert("אימייל לא קיים")
         // }
@@ -41,7 +41,8 @@ class Login extends React.Component{
         // }
         if(foundUser){
             this.props.login(foundUser);
-            window.location.href = '/#/user';
+            console.log('in login page ' + foundUser)
+            window.location.href = '/#/';
         }
        
         else{

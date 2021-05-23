@@ -14,6 +14,7 @@ import CreateGroup from './pages/CreateGroup';
 import usersJson from './data/users.json';
 import categoriesJson from './data/categories.json';
 import citiesJson from './data/israel-cities.json';
+import groupsJson from './data/groups.json';
 import Footer from './components/Footer';
 
 
@@ -30,9 +31,11 @@ class App extends React.Component {
       allTeachers:usersJson.filter((user)=>{
         if (user.isTeacher){return user}
       }),
-      // allTeachers: (usersJson.isTeacher) ? 
       allCategories:categoriesJson,
-      allCities:citiesJson
+      allCities:citiesJson,
+      allGroups:groupsJson,
+      listUsers:[]
+    
     }
   }
 login = (userObj)=>{
@@ -45,6 +48,32 @@ login = (userObj)=>{
      activeUser:null
    })
  } 
+
+ joinTeacher = (teacherId) => {
+  // console.log(teacherId)
+ console.log('active user in app:'+ this.state.activeUser)
+  if(!this.state.activeUser){
+      alert('התחבר/הרשם כדי להצטרף לקבוצה של המורה')
+  }
+  else{
+      
+     
+     const teacherGroups = this.state.allGroups.map((group)=> {
+      if(group.createdBy !== teacherId) {
+        return group;
+      }
+       else {
+          group.usersList.concat(this.state.activeUser)
+       }  
+         
+      })
+      this.setState({
+        allGroups:teacherGroups
+    })
+    console.log(this.state.allGroups)
+  }    
+ }
+
   render() {
 
  
@@ -68,11 +97,14 @@ login = (userObj)=>{
          allTeachers={this.state.allTeachers}
          allCategories={this.state.allCategories}
          allCities={this.state.allCities}
+         allGroups={this.state.allGroups}
          header={'חפש בעל מיומנות/מורה/מאמן'}
+         activeUser={this.state.activeUser}
+         joinTeacher={this.joinTeacher}
          ></Teachers>
       </Route>
       <Route exact path='/groups'>
-       <Groups></Groups>
+       <Groups allUsers={this.state.allUsers} allGroups={this.state.allGroups}></Groups>
       </Route>
       <Route exact path='/user'>
          <User></User>

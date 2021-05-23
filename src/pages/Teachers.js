@@ -12,13 +12,12 @@ class Teachers extends React.Component{
             resultsByCategory:[],
             resultsByCity:[],
             chosenCity:0,
-            chosenCategory:0
+            chosenCategory:0,
             
         }
     }
-
+//Function update state and returns teachers filtered by city 
 citySelected = (index) => {
-  
     const teachersByCity = this.props.allTeachers.filter((teacher)=>{
         return (String(teacher.city)===index) ? teacher : false
    
@@ -30,28 +29,22 @@ this.setState({
 })
 
 } 
-
+//Function update state and returns teachers filtered by category 
 categorySelected = (index) => {
-    console.log('category index'+index+typeof(index))
     const filteredTeachers = (index!=='0')?
     this.props.allTeachers.filter((teacher)=>{
-        return (String(teacher.categoryId)===index) ? teacher : false
-   
-}) :this.props.allTeachers ;
+        return (String(teacher.categoryId)===index) ? teacher : false}) :this.props.allTeachers ;
    
     this.setState({
          resultsByCategory: filteredTeachers,
          chosenCategory:index
-       
     })
-   
 } 
 
 // Function that compares both category and city arrays
 // If both selected returns array that includes category and city chosen
 // If none selected  returns all the teachers
 // Else if city or category selected, returns the selected results
-
 allFilter=()=>{
     const chosenCity = this.state.chosenCity;
     const chosenCategory = this.state.chosenCategory;
@@ -62,7 +55,7 @@ allFilter=()=>{
 
     }
     if(!chosenCity && !chosenCategory){
-        console.log(this.props.allTeachers);
+        // console.log(this.props.allTeachers);
         return this.props.allTeachers
     }
     else{
@@ -72,13 +65,31 @@ allFilter=()=>{
     }
 }
 
+//Function join teacher group
+joinTeacherGroup=(teacherId)=>{
+    this.props.joinTeacher(teacherId);
+    
+}
+
+//Function count users in teacher group
+// countUsersInGroup=()=>{
+//     this.props.allGroups(teacherId);
+// }
+
     render(){
+        console.log('in teacher page'+this.props.activeUser)
         const allResults = this.allFilter();
        //Create teachers cards
             const teacherCards =allResults.map((teacher)=>{
             const teacherCategory = this.props.allCategories.find(element =>  (element.id === teacher.categoryId));
             const teacherCity = this.props.allCities.find(element =>  (element.semel_yeshuv === String(teacher.city)));
-          
+            // const countUsersInGroup =  this.props.allGroups.map(group =>  {
+            //     if(group.createdBy === teacher.id) {return group.usersList}  
+            // }
+            //    );
+            // const countUsersInGroup =  this.props.allGroups.filter(group =>(group.createdBy === teacher.id));
+            //    console.log('count ' +  countUsersInGroup);
+            //    console.log('count users in group :' + countUsersInGroup.usersList);
                 return (
                     //lg={3} md={6} sm={12}
                     // xs={12} md={4} className="px-0 my-3 
@@ -98,10 +109,17 @@ allFilter=()=>{
                     <Card.Text>
                 {teacher.about}              
                     </Card.Text>
-                    <Button variant="outline-primary">פרטים</Button>
+                   
                     
                 </Card.Body> 
-                <Card.Footer></Card.Footer>
+                <Card.Footer>
+                    <div className="d-flex">
+                     
+                    <Button className="ml-auto" size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.joinTeacherGroup(teacher.id)}>+הצטרף לקבוצה</Button>
+                    <Button className="mr-auto" size="sm" variant="outline-primary">פרטים</Button>
+                    </div>
+                    <div >סה"כ אנשים בקבוצה </div>
+                </Card.Footer>
                     
                     
                     </Card>
