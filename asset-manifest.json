@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/skillshare/static/css/main.ee692dc0.chunk.css",
+    "main.js": "/skillshare/static/js/main.8da4f942.chunk.js",
+    "main.js.map": "/skillshare/static/js/main.8da4f942.chunk.js.map",
+    "runtime-main.js": "/skillshare/static/js/runtime-main.e49ef337.js",
+    "runtime-main.js.map": "/skillshare/static/js/runtime-main.e49ef337.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/skillshare/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.54a20d6f.chunk.js": "/skillshare/static/js/2.54a20d6f.chunk.js",
+    "static/js/2.54a20d6f.chunk.js.map": "/skillshare/static/js/2.54a20d6f.chunk.js.map",
+    "index.html": "/skillshare/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/skillshare/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.ee692dc0.chunk.css.map": "/skillshare/static/css/main.ee692dc0.chunk.css.map",
+    "static/js/2.54a20d6f.chunk.js.LICENSE.txt": "/skillshare/static/js/2.54a20d6f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e49ef337.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.54a20d6f.chunk.js",
+    "static/css/main.ee692dc0.chunk.css",
+    "static/js/main.8da4f942.chunk.js"
+  ]
+}
