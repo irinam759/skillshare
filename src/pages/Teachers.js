@@ -118,7 +118,7 @@ joinTeacherGroup=(teacherId)=>{
                 </Card.Body> 
                 <Card.Footer>
                 <Card.Text text-muted>
-                    סה"כ אנשים בקבוצה 
+                   <small>סה"כ אנשים בקבוצה </small> 
                     </Card.Text>
                 </Card.Footer>
                     

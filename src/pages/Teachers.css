@@ -16,3 +16,27 @@
   height: 15vw;
   object-fit: cover;
 }
+/*  Small devices (landscape phones, 576px and up) */
+@media (max-width: 575.98px) {
+   .card-img{
+  width: 100%;
+  height: 90vw;
+  object-fit: cover;
+} 
+}
+
+ /* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {  
+   .card-img{
+  width: 100%;
+  height: 70vw;
+  object-fit: cover;
+}  }
+
+ /* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+  .card-img{
+  width: 100%;
+  height: 50vw;
+  object-fit: cover;
+}  }
