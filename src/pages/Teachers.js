@@ -77,25 +77,25 @@ joinTeacherGroup=(teacherId)=>{
 // }
 
     render(){
-        console.log('in teacher page'+this.props.activeUser)
+       
         const allResults = this.allFilter();
        //Create teachers cards
             const teacherCards =allResults.map((teacher)=>{
             const teacherCategory = this.props.allCategories.find(element =>  (element.id === teacher.categoryId));
             const teacherCity = this.props.allCities.find(element =>  (element.semel_yeshuv === String(teacher.city)));
-            // const countUsersInGroup =  this.props.allGroups.map(group =>  {
-            //     if(group.createdBy === teacher.id) {return group.usersList}  
-            // }
-            //    );
-            // const countUsersInGroup =  this.props.allGroups.filter(group =>(group.createdBy === teacher.id));
-            //    console.log('count ' +  countUsersInGroup);
-            //    console.log('count users in group :' + countUsersInGroup.usersList);
+            const countUsersInGroup =  this.props.allGroups.map(group =>  {
+                console.log('group '+group);
+                console.log('teacherId '+teacher.id);
+                if(group.createdBy === teacher.id) {return group.usersList}  
+            });
+            console.log(countUsersInGroup);
+       
                 return (
                     //lg={3} md={6} sm={12}
                     // xs={12} md={4} className="px-0 my-3 
             <Col key={teacher.id} xs={12} sm={12} md={6} lg={3} >
                 <Card className="mb-2" className="teacher-card">
-                <Card.Img variant="top" src={`./images/img-profile/${teacher.image}`} />
+                <Card.Img variant="top" src={`./images/img-profile/${teacher.image}`} className="card-img"/>
                 <Card.Body>
                     <Card.Title>{teacher.name}</Card.Title>
                   
@@ -106,19 +106,20 @@ joinTeacherGroup=(teacherId)=>{
                     </div>
                    
                   
-                    <Card.Text>
+                    <Card.Text text-truncate>
                 {teacher.about}              
                     </Card.Text>
-                   
+                    <div className="d-flex">
+                     
+                     <Button className="ml-auto" size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.joinTeacherGroup(teacher.id)}>+הצטרף לקבוצה</Button>
+                     <Button className="mr-auto" size="sm" variant="outline-primary">פרטים</Button>
+                     </div>
                     
                 </Card.Body> 
                 <Card.Footer>
-                    <div className="d-flex">
-                     
-                    <Button className="ml-auto" size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.joinTeacherGroup(teacher.id)}>+הצטרף לקבוצה</Button>
-                    <Button className="mr-auto" size="sm" variant="outline-primary">פרטים</Button>
-                    </div>
-                    <div >סה"כ אנשים בקבוצה </div>
+                <Card.Text text-muted>
+                    סה"כ אנשים בקבוצה 
+                    </Card.Text>
                 </Card.Footer>
                     
                     

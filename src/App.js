@@ -20,7 +20,7 @@ import Footer from './components/Footer';
 
 //App is a main component for SkillShare app
 //State:
-//activeUser: Either null, if no user logged in, or a user object if a user is in
+//activeUser: Eather null, if no user logged in, or a user object if a user is in
 
 class App extends React.Component {
   constructor(props){
@@ -50,29 +50,34 @@ login = (userObj)=>{
  } 
 
  joinTeacher = (teacherId) => {
-  // console.log(teacherId)
- console.log('active user in app:'+ this.state.activeUser)
+ 
   if(!this.state.activeUser){
       alert('התחבר/הרשם כדי להצטרף לקבוצה של המורה')
   }
   else{
       
-     
      const teacherGroups = this.state.allGroups.map((group)=> {
+       
       if(group.createdBy !== teacherId) {
         return group;
       }
-       else {
-          group.usersList.concat(this.state.activeUser)
-       }  
+     
+      group.usersList=group.usersList.concat(this.state.activeUser.id);
+         return group;
+         ;
+      
          
-      })
-      this.setState({
-        allGroups:teacherGroups
-    })
-    console.log(this.state.allGroups)
-  }    
- }
+     });
+     this.setState({
+      allGroups:teacherGroups
+  })
+     console.log(this.state.allGroups)
+     console.log(teacherGroups);
+    }
+  }
+    
+      
+
 
   render() {
 
