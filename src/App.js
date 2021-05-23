@@ -25,13 +25,8 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      activeUser:{
-        //activeUser:null
-        id:1,
-        name:'ira',
-        email:'katsirka@gmail.com',
-        pwd:'ira'
-      },
+      activeUser:null,
+      allUsers:usersJson,
       allTeachers:usersJson.filter((user)=>{
         if (user.isTeacher){return user}
       }),
@@ -40,7 +35,11 @@ class App extends React.Component {
       allCities:citiesJson
     }
   }
-
+login = (userObj)=>{
+  this.setState({
+    activeUser:userObj
+  })
+}
  logout = () => {
    this.setState({
      activeUser:null
@@ -65,7 +64,7 @@ class App extends React.Component {
         activeUser={this.state.activeUser} />
       </Route>
       <Route exact path='/teachers'>
-        <Teachers
+        <Teachers 
          allTeachers={this.state.allTeachers}
          allCategories={this.state.allCategories}
          allCities={this.state.allCities}
@@ -79,7 +78,10 @@ class App extends React.Component {
          <User></User>
       </Route>
       <Route exact path='/login'>
-         <Login></Login>
+         <Login 
+         allUsers={this.state.allUsers}
+         login={this.login}
+         ></Login>
       </Route>
       <Route exact path='/signup'>
         <Signup></Signup>

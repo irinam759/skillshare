@@ -12,7 +12,7 @@ class HomePage extends React.Component{
 
 // Function checking if 
 checkLogin=()=>{
-
+    window.location.href = '/#/signup';
 }
 
     render(){
@@ -20,7 +20,7 @@ checkLogin=()=>{
         const loginEl = (! this.props.activeUser) ? 
         <div className="site-desc">   
         <p className="text-center mx-auto px-sm-0  mb-1">רוצה ליצור או להצטרף לקבוצה קיימת?<br /> בעל מיומנות/מורה/מאמן?</p>
-        <Button type="button" onClick={()=>{}} variant="outline-primary " block >   צור פרופיל</Button>
+        <Button type="button" onClick={this.checkLogin} variant="outline-primary " block >   צור פרופיל</Button>
          </div> : null;
 
         return(

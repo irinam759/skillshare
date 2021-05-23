@@ -14,6 +14,7 @@ class SkillNavbar extends React.Component{
         // If activeUser exists - Render signout
         const loginEl = (! this.props.activeUser) ? <Nav.Link href="/#/login">התחבר</Nav.Link> : null;
         const signupEl = (! this.props.activeUser) ? <Nav.Link href="/#/signup">הירשם</Nav.Link> : null;
+        const nameEl = (this.props.activeUser)  ? <Nav.Link disabled >שלום, {this.props.activeUser.name}</Nav.Link> : null;
         const signoutEl = (this.props.activeUser)  ?
          <Nav.Link href="/#/" onClick={() => this.props.logout()}>
            התנתק
@@ -38,8 +39,9 @@ class SkillNavbar extends React.Component{
                 <Nav className="mr-auto">
                 {loginEl}
                 {signupEl}
+                {nameEl}
                {signoutEl}
-                
+               
               </Nav>
               
             </Navbar.Collapse>
