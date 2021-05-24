@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Row, Button} from 'react-bootstrap';
+import { CardDeck, CardGroup, Card, Col, Row, Button} from 'react-bootstrap';
 import CardSubtitles from '../components/CardSubtitles';
 import SearchForm from '../components/SearchForm';
 import './Teachers.css';
@@ -13,6 +13,7 @@ class Teachers extends React.Component{
             resultsByCity:[],
             chosenCity:0,
             chosenCategory:0,
+
             
         }
     }
@@ -68,14 +69,38 @@ allFilter=()=>{
 //Function join teacher group
 joinTeacherGroup=(teacherId)=>{
     this.props.joinTeacher(teacherId);
+
     
 }
+//Count user in teachers groups
+countUsers = (groupObj) =>{
+    let count = 0;
+   if (typeof groupObj === "object"){
+    for(let i=0;i<groupObj.usersList.length;i++){
+        count++;
+    }
+    
+    return count;
+}
+return 0;
+}
+//Check if user in the list
+// return 0 if in  the list
+// else return -1
 
-//Function count users in teacher group
-// countUsersInGroup=()=>{
-//     this.props.allGroups(teacherId);
-// }
+changeButton = (groupObj) =>{
+    
+    if ((typeof groupObj === "object") && (this.props.activeUser)) {
+          return groupObj.usersList.findIndex(element => (element === this.props.activeUser.id));       
+}
+return -1;
+}
 
+exitTeacherGroup=(teacherId)=>{
+    this.props.exitTeacher(teacherId);
+
+    
+}
     render(){
        
         const allResults = this.allFilter();
@@ -83,48 +108,45 @@ joinTeacherGroup=(teacherId)=>{
             const teacherCards =allResults.map((teacher)=>{
             const teacherCategory = this.props.allCategories.find(element =>  (element.id === teacher.categoryId));
             const teacherCity = this.props.allCities.find(element =>  (element.semel_yeshuv === String(teacher.city)));
-            const countUsersInGroup =  this.props.allGroups.map(group =>  {
-                console.log('group '+group);
-                console.log('teacherId '+teacher.id);
-                if(group.createdBy === teacher.id) {return group.usersList}  
-            });
-            console.log(countUsersInGroup);
-       
+            const groupObj = this.props.allGroups.find(user => (user.createdBy === teacher.id));
+          
+            let counter = this.countUsers(groupObj);
+           let findUserInList = this.changeButton(groupObj);
+            
+            console.log(findUserInList);
                 return (
-                    //lg={3} md={6} sm={12}
-                    // xs={12} md={4} className="px-0 my-3 
-            <Col key={teacher.id} xs={12} sm={12} md={6} lg={3} >
-                <Card className="mb-2" className="teacher-card">
+            <Col className="mb-4" key={teacher.id} xs={12} sm={12} md={6} lg={3} >
+           
+                <Card  className="teacher-card">
                 <Card.Img variant="top" src={`./images/img-profile/${teacher.image}`} className="card-img"/>
                 <Card.Body>
                     <Card.Title>{teacher.name}</Card.Title>
                   
-                    <div className="details">
+                    <div className="details sm" size="sm">
                      <CardSubtitles text="עיר:" desc={teacherCity.name}></CardSubtitles>
                      <CardSubtitles text="תחום:" desc={teacherCategory.title}></CardSubtitles>
                      <CardSubtitles text="התמחות:" desc={teacher.desc}></CardSubtitles>
                     </div>
                    
                   
-                    <Card.Text text-truncate>
+                    <Card.Text >
                 {teacher.about}              
                     </Card.Text>
                     <div className="d-flex">
-                     
-                     <Button className="ml-auto" size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.joinTeacherGroup(teacher.id)}>+הצטרף לקבוצה</Button>
+                       
+                     <Button className={(findUserInList<0)? 'ml-auto show' : 'ml-auto hide'} size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.joinTeacherGroup(teacher.id)}>+הצטרף לקבוצה</Button>
+                     <Button className={(findUserInList<0)? 'ml-auto hide' : 'ml-auto show'} size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.exitTeacherGroup(teacher.id)}>-לצאת מקבוצה</Button>
                      <Button className="mr-auto" size="sm" variant="outline-primary">פרטים</Button>
                      </div>
                     
                 </Card.Body> 
                 <Card.Footer>
                 <Card.Text text-muted>
-                   <small>סה"כ אנשים בקבוצה </small> 
+                   <small>{counter} אנשים בקבוצה</small> 
                     </Card.Text>
                 </Card.Footer>
-                    
-                    
                     </Card>
-                    </Col>
+                     </Col>
             )
         });
 
@@ -144,7 +166,9 @@ joinTeacherGroup=(teacherId)=>{
                 ></SearchForm> 
              
                 <Row className="">
+                
                {teacherCards}
+              
                </Row>
             </div>
         )

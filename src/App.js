@@ -49,13 +49,15 @@ login = (userObj)=>{
    })
  } 
 
+ //Join Teacher group
  joinTeacher = (teacherId) => {
- 
+
   if(!this.state.activeUser){
       alert('התחבר/הרשם כדי להצטרף לקבוצה של המורה')
   }
   else{
-      
+  
+
      const teacherGroups = this.state.allGroups.map((group)=> {
        
       if(group.createdBy !== teacherId) {
@@ -71,12 +73,34 @@ login = (userObj)=>{
      this.setState({
       allGroups:teacherGroups
   })
-     console.log(this.state.allGroups)
-     console.log(teacherGroups);
+     
     }
   }
-    
+
+  //Exit Teacher group
+ exitTeacher = (teacherId) => {
+
+
+     const teacherGroups = this.state.allGroups.map((group)=> {
+       
+      if(group.createdBy !== teacherId) {
+        return group;
+      }
+     
+      group.usersList=group.usersList.filter(element => (element !== this.state.activeUser.id))
+         return group;
+         ;
       
+         
+     });
+     this.setState({
+      allGroups:teacherGroups
+  })
+     
+    
+  }
+    
+      // group.usersList=group.usersList.filter(element => (element !== this.state.activeUser.id))
 
 
   render() {
@@ -106,6 +130,8 @@ login = (userObj)=>{
          header={'חפש בעל מיומנות/מורה/מאמן'}
          activeUser={this.state.activeUser}
          joinTeacher={this.joinTeacher}
+         exitTeacher={this.exitTeacher}
+
          ></Teachers>
       </Route>
       <Route exact path='/groups'>

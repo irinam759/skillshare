@@ -77,7 +77,7 @@ class SearchForm extends React.Component{
 
         return(
             
-            <Form>
+            <Form className="mb-2">
             <Form.Row>
             <Form.Group as={Col} lg={4} md={6} sm={6} xs={12} controlId="formFreeSearch">
                 <Form.Control type="text" placeholder="חיפוש חופשי" />

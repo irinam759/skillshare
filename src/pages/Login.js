@@ -33,12 +33,6 @@ class Login extends React.Component{
             }
         });
         
-        // if(!foundUser.email){
-        //     alert("אימייל לא קיים")
-        // }
-        // if(foundUser.email && !foundUser.pw){
-        //     alert("הססמא שגויה")
-        // }
         if(foundUser){
             this.props.login(foundUser);
             console.log('in login page ' + foundUser)
