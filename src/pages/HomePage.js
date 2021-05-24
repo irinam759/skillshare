@@ -7,6 +7,7 @@ import MainCard from '../components/MainCard';
 
 
 
+
 class HomePage extends React.Component{
     constructor(props){
         super(props);
@@ -33,7 +34,7 @@ checkLogin=()=>{
                 </Jumbotron>
                 
                 <Row className="justify-content-center text-center px-lg-5 mx-lg-5 mx-md-4 mx-sm-3 mx-xs-0" >
-                {/* */}
+  
                     <MainCard image="./images/Questions-and-answers.png" text="חפש בעל מיומנות/מורה/מאמן" page="./Teachers" color="card-red"></MainCard>
                     <MainCard image="./images/Community.png" text=" חפש קבוצה" page="./Groups" color="card-blue"></MainCard>
                     <MainCard image="./images/Power-of-knowledge.png" text=" צור קבוצה" page="./CreateGroup" color="card-yellow"></MainCard>       

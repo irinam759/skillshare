@@ -94,6 +94,7 @@ exitTeacherGroup=(teacherId)=>{
     render(){
        
         const allResults = this.allFilter();
+        console.log(allResults)
        //Create teachers cards
             const teacherCards =allResults.map((teacher)=>{
             const teacherCategory = this.props.allCategories.find(element =>  (element.id === teacher.categoryId));
@@ -150,6 +151,7 @@ exitTeacherGroup=(teacherId)=>{
                 allCities={this.props.allCities}
                 onCitySelected = {this.citySelected}
                 onCategorySelected = {this.categorySelected}
+                allTeachers={this.allTeachers}
                 ></SearchForm> 
              
                 <Row className="">

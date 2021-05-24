@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Form, ListGroup } from 'react-bootstrap';
+import LiveSearchBox from './LiveSearchBox';
 import './SearchForm.css';
 
 class SearchForm extends React.Component{
@@ -7,7 +8,9 @@ class SearchForm extends React.Component{
         super(props);
         this.state = {
             searchCity:'',
-            cityResults:[]
+            cityResults:[],
+            newString: '',
+            results: []
         }
     }   
 
@@ -51,12 +54,27 @@ class SearchForm extends React.Component{
             selectCategory:event.target.value
         })
         this.props.onCategorySelected(event.target.value);
-        // console.log('category: '+event.target.value)
+       
     }
 
+    searchTextChanged =(newText) => {
+         
+        // this.props.allResults.filter  
+     
+        this.setState({
+            newString:newText,
+            results:  this.props.allTeachers
+        //     this.props.allResults
+        //     .filter((user)=>user.desc.includes(newText) || user.name.includes(newText))
+         })                
+        console.log('new string: '+ newText)
+        
+        
+           
+    }
 
     render(){
-       
+        console.log('new results: '+  this.props.allResults)
         // Map all study categories
         // Sort by title
         const studyCategories = this.props.allCategories
@@ -72,7 +90,6 @@ class SearchForm extends React.Component{
                  key={city.semel_yeshuv}  >{city.name}</ListGroup.Item>
          });
          
-        
 
 
         return(
@@ -80,7 +97,14 @@ class SearchForm extends React.Component{
             <Form className="mb-2">
             <Form.Row>
             <Form.Group as={Col} lg={4} md={6} sm={6} xs={12} controlId="formFreeSearch">
-                <Form.Control type="text" placeholder="חיפוש חופשי" />
+                {/* <Form.Control type="text" placeholder="חיפוש חופשי" /> */}
+                <LiveSearchBox 
+                results={this.state.results}
+                placeholder='חפש לפי שם או התמחות'
+                onSearchChanged={this.searchTextChanged}
+                onResultSelected='{this.addMovie}'
+                   
+                />
             </Form.Group>
             <Form.Group as={Col} lg={4} md={6} sm={6} xs={12} controlId="formStudyCategory">
                     <Form.Control as="select" onChange={this.selectCategory}>

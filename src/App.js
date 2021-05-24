@@ -9,13 +9,16 @@ import Groups from './pages/Groups';
 import SkillNavbar from './components/SkillNavbar';
 import React from 'react';
 import User from './pages/User';
-import { Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import CreateGroup from './pages/CreateGroup';
 import usersJson from './data/users.json';
 import categoriesJson from './data/categories.json';
 import citiesJson from './data/israel-cities.json';
 import groupsJson from './data/groups.json';
 import Footer from './components/Footer';
+
+
+
 
 
 //App is a main component for SkillShare app
@@ -60,8 +63,9 @@ login = (userObj)=>{
 
  //Join Teacher group
  joinTeacher = (teacherId) => {
-
+ 
   if(!this.state.activeUser){
+    
       alert('התחבר/הרשם כדי להצטרף לקבוצה של המורה')
   }
   else{
@@ -133,7 +137,7 @@ console.log(this.state.groupsByUsers)
     <HashRouter>
     
    
-      <Route exact path={['/','/teachers','/groups','/user','/createGroup']}>
+      <Route exact path={['/','/loginModal','/teachers','/groups','/user','/createGroup']}>
         <SkillNavbar
          activeUser={this.state.activeUser} 
         logout={this.logout}
@@ -185,6 +189,7 @@ console.log(this.state.groupsByUsers)
       <Route exact path='/signup'>
         <Signup></Signup>
       </Route>
+     
       <Route exact path='/createGroup'>
        <CreateGroup></CreateGroup>
       </Route>
