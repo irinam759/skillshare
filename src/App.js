@@ -34,8 +34,17 @@ class App extends React.Component {
       allCategories:categoriesJson,
       allCities:citiesJson,
       allGroups:groupsJson,
+      //groupsByUsers - show only groups created by users and not by teacher
+      groupsByUsers:groupsJson.filter((user)=>{
+        let element= usersJson.filter((teacher)=>{
+          if ((teacher.id===user.createdBy)&& (teacher.isTeacher===false))
+           {
+             return true }
+        })
+        if(element.length>0){return true}
+        else{return false}
+    }),
       listUsers:[]
-    
     }
   }
 login = (userObj)=>{
@@ -89,8 +98,7 @@ login = (userObj)=>{
      
       group.usersList=group.usersList.filter(element => (element !== this.state.activeUser.id))
          return group;
-         ;
-      
+
          
      });
      this.setState({
@@ -100,12 +108,11 @@ login = (userObj)=>{
     
   }
     
-      // group.usersList=group.usersList.filter(element => (element !== this.state.activeUser.id))
-
+  
 
   render() {
 
- 
+console.log(this.state.groupsByUsers)
   return (
     <HashRouter>
     
@@ -135,7 +142,7 @@ login = (userObj)=>{
          ></Teachers>
       </Route>
       <Route exact path='/groups'>
-       <Groups allUsers={this.state.allUsers} allGroups={this.state.allGroups}></Groups>
+       <Groups allUsers={this.state.allUsers} allGroups={this.state.groupsByUsers}></Groups>
       </Route>
       <Route exact path='/user'>
          <User></User>

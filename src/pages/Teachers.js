@@ -113,7 +113,6 @@ exitTeacherGroup=(teacherId)=>{
             let counter = this.countUsers(groupObj);
            let findUserInList = this.changeButton(groupObj);
             
-            console.log(findUserInList);
                 return (
             <Col className="mb-4" key={teacher.id} xs={12} sm={12} md={6} lg={3} >
            
@@ -121,27 +120,22 @@ exitTeacherGroup=(teacherId)=>{
                 <Card.Img variant="top" src={`./images/img-profile/${teacher.image}`} className="card-img"/>
                 <Card.Body>
                     <Card.Title>{teacher.name}</Card.Title>
-                  
                     <div className="details sm" size="sm">
                      <CardSubtitles text="עיר:" desc={teacherCity.name}></CardSubtitles>
                      <CardSubtitles text="תחום:" desc={teacherCategory.title}></CardSubtitles>
                      <CardSubtitles text="התמחות:" desc={teacher.desc}></CardSubtitles>
-                    </div>
-                   
-                  
+                    </div>                  
                     <Card.Text >
-                {teacher.about}              
+                       {teacher.about}              
                     </Card.Text>
                     <div className="d-flex">
-                       
-                     <Button className={(findUserInList<0)? 'ml-auto show' : 'ml-auto hide'} size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.joinTeacherGroup(teacher.id)}>+הצטרף לקבוצה</Button>
-                     <Button className={(findUserInList<0)? 'ml-auto hide' : 'ml-auto show'} size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.exitTeacherGroup(teacher.id)}>-לצאת מקבוצה</Button>
-                     <Button className="mr-auto" size="sm" variant="outline-primary">פרטים</Button>
+                        <Button className={(findUserInList<0)? 'ml-auto show' : 'ml-auto hide'} size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.joinTeacherGroup(teacher.id)}>+הצטרף לקבוצה</Button>
+                        <Button className={(findUserInList<0)? 'ml-auto hide' : 'ml-auto show'} size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.exitTeacherGroup(teacher.id)}>-לצאת מקבוצה</Button>
+                        <Button className="mr-auto" size="sm" variant="outline-primary">פרטים</Button>
                      </div>
-                    
                 </Card.Body> 
                 <Card.Footer>
-                <Card.Text text-muted>
+                <Card.Text className="text-muted">
                    <small>{counter} אנשים בקבוצה</small> 
                     </Card.Text>
                 </Card.Footer>
