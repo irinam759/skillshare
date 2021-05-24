@@ -72,8 +72,11 @@ class Login extends React.Component{
                     </Col>
                 </Form.Group> */}
 
-                <Form.Group as={Row}>
-                    <Col sm={{ span: 10, offset: 2 }}>
+                <Form.Group as={Row}> 
+                <Form.Label column sm={2}>
+                    
+                    </Form.Label>
+                    <Col className = "m-auto" sm={10}>
                     <Button type="button" onClick={this.handleLogin} variant="outline-primary">התחבר</Button>
                     </Col>
                 </Form.Group>
