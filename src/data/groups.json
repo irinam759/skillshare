@@ -1,17 +1,21 @@
 [
     {"id":1,"createdBy":1,"city":3000,"category":2,"title":"firsfr","desc":"dd", "usersList":[6,7]},
-    {"id":2,"createdBy":2,"city":3,"category":4,"title":"second","desc":"dd", "usersList":[3,4,11]},
-    {"id":3,"createdBy":3,"city":3,"category":4,"title":"third","desc":"dd", "usersList":[1,11,12,5]},
-    {"id":4,"createdBy":4,"city":3,"category":4,"title":"third","desc":"dd", "usersList":[13]},
-    {"id":5,"createdBy":5,"city":3,"category":4,"title":"third","desc":"dd", "usersList":[3]},
-    {"id":6,"createdBy":6,"city":3,"category":4,"title":"third","desc":"dd", "usersList":[]},
-    {"id":7,"createdBy":7,"city":3,"category":4,"title":"third","desc":"dd", "usersList":[]},
-    {"id":8,"createdBy":8,"city":3,"category":4,"title":"third","desc":"dd", "usersList":[]},
-    {"id":9,"createdBy":9,"city":3,"category":4,"title":"third","desc":"dd", "usersList":[]},
-    {"id":10,"createdBy":103,"city":3,"category":4,"title":"third","desc":"dd", "usersList":[]},
-    {"id":11,"createdBy":11,"city":3,"category":4,"title":"third","desc":"dd", "usersList":[3,1]},
-    {"id":12,"createdBy":12,"city":3,"category":4,"title":"third","desc":"dd", "usersList":[13,12]},
-    {"id":13,"createdBy":13,"city":3,"category":4,"title":"third","desc":"dd", "usersList":[]}
+    {"id":2,"createdBy":2,"city":3000,"category":4,"title":"second","desc":"dd", "usersList":[3,4,11]},
+    {"id":3,"createdBy":3,"city":3000,"category":4,"title":"third","desc":"dd", "usersList":[1,11,12,5]},
+    {"id":4,"createdBy":4,"city":3000,"category":4,"title":"third","desc":"dd", "usersList":[13]},
+    {"id":5,"createdBy":5,"city":3000,"category":4,"title":"third","desc":"dd", "usersList":[3000]},
+    {"id":6,"createdBy":6,"city":3000,"category":4,"title":"third","desc":"dd", "usersList":[]},
+    {"id":7,"createdBy":7,"city":3000,"category":4,"title":"third","desc":"dd", "usersList":[]},
+    {"id":8,"createdBy":8,"city":4000,"category":4,"title":"third","desc":"dd", "usersList":[]},
+    {"id":9,"createdBy":9,"city":4000,"category":4,"title":"third","desc":"dd", "usersList":[]},
+    {"id":10,"createdBy":10,"city":4000,"category":4,"title":"קבוצת כדורסל לנשים","desc":"קבוצת כדורסל למשחק חופשי בשעות הערב", "usersList":[]},
+    {"id":11,"createdBy":11,"city":4000,"category":7,"title":"קבוצה ללימוד עברית","desc":"לימוד עברית לילדים מכיתה א-ג, באיזור מחנה יהודה", "usersList":[3,1]},
+    {"id":12,"createdBy":12,"city":3000,"category":9,"title":"קבוצה למיומנות חברתית","desc":"קבוצה חברתית לילדים על הספקטרום בתפקוד גבוה", "usersList":[13,12]},
+    {"id":13,"createdBy":13,"city":3000,"category":4,"title":"הגנה עצמית לילדים","desc":"ללמד ילדים הגנה עצמית, באיזור ד'", "usersList":[]},
+    {"id":14,"createdBy":14,"city":4000,"category":2,"title":"לימוד בישול אוכל סיני","desc":"קבוצה ללימוד בישול אוכל סיני, אזור דרום העיר", "usersList":[3,1]},
+    {"id":15,"createdBy":15,"city":3000,"category":14,"title":"תכנות roblox לילדים","desc":"קבוצה לתכנות בשפת LUA, לילדים בני 10-12", "usersList":[13,12]},
+    {"id":16,"createdBy":16,"city":3000,"category":5,"title":"קבוצה לנגרות","desc":"רוצה ללמוד נגרות לעבודות בית קטנות", "usersList":[]},
+    {"id":17,"createdBy":17,"city":3000,"category":1,"title":"תיק עבודות בעיצוב","desc":"קבוצה להכנת תיק עבודות בעצוב גרפי", "usersList":[]}
    
     
 

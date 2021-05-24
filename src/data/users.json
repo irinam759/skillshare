@@ -9,7 +9,11 @@
     {"id":8,"name":"אדווה אשכנזי","email":"i@yahoo.com","pw":"123", "image":"img-cooking6.jpg","city":4000,"isTeacher":true,"categoryId":2,"desc":"אוכל מרוקאי ", "about":"אלמד אותך לבשל אוכל הכי טעים ואוטנטי!"},
     {"id":9,"name":"עלמה כהן","email":"j@yahoo.com","pw":"123", "image":"img-art3.jpg","city":3000,"isTeacher":true,"categoryId":1,"desc":"לימוד רישום וציור בכל הרמות", "about":"אני בוגרת בצלאל באמנות, מציגה ופועלת בתחום האמנות העכשווית. "},
     {"id":10,"name":"לינוי וולקוב","email":"k@yahoo.com","pw":"123", "image":"img-art1.jpg","city":4000,"isTeacher":true,"categoryId":1,"desc":"רישום, הכנת תיק עבודות", "about":"אני ציירת ומאיירת, בוגרת המדרשה. ניסיון רב בהכנת תיק עבודות לקבלה ללימודים, הדרכה ברישום "},
-    {"id":11,"name":"שרה","email":"l@gmail.com","pw":"123", "image":"img-art2.jpg","city":932,"isTeacher":false },
-    {"id":12,"name":"שרה","email":"m@gmail.com","pw":"123", "image":"img-art2.jpg","city":3000,"isTeacher":false },
-    {"id":13,"name":"שרה","email":"n@gmail.com","pw":"123", "image":"img-art2.jpg","city":4000,"isTeacher":false}
+    {"id":11,"name":"שרה שרוני","email":"l@gmail.com","pw":"123", "image":"img-art2.jpg","city":932,"isTeacher":false },
+    {"id":12,"name":"אבי יצחקוב","email":"m@gmail.com","pw":"123", "image":"img-art2.jpg","city":3000,"isTeacher":false },
+    {"id":13,"name":"ויקטור מרנג","email":"n@gmail.com","pw":"123", "image":"img-art2.jpg","city":4000,"isTeacher":false},
+    {"id":14,"name":"פול גוגן","email":"l@gmail.com","pw":"123", "image":"img-art2.jpg","city":932,"isTeacher":false },
+    {"id":15,"name":"ברונו שולץ","email":"m@gmail.com","pw":"123", "image":"img-art2.jpg","city":3000,"isTeacher":false },
+    {"id":16,"name":"קייט קוטליץ","email":"n@gmail.com","pw":"123", "image":"img-art2.jpg","city":4000,"isTeacher":false},
+    {"id":17,"name":"אמדאו מודיליאני","email":"n@gmail.com","pw":"123", "image":"img-art2.jpg","city":4000,"isTeacher":false}
 ]

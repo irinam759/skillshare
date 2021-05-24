@@ -142,7 +142,18 @@ console.log(this.state.groupsByUsers)
          ></Teachers>
       </Route>
       <Route exact path='/groups'>
-       <Groups allUsers={this.state.allUsers} allGroups={this.state.groupsByUsers}></Groups>
+       <Groups 
+       allUsers={this.state.allUsers}
+       groupsByUsers={this.state.groupsByUsers}
+        allTeachers={this.state.allTeachers}
+         allCategories={this.state.allCategories}
+         allCities={this.state.allCities}
+         header={'חפש קבוצה'}
+         activeUser={this.state.activeUser}
+         joinTeacher={this.joinTeacher}
+         exitTeacher={this.exitTeacher}
+
+        ></Groups>
       </Route>
       <Route exact path='/user'>
          <User></User>
