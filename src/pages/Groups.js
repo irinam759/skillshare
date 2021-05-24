@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Button, Card, Col, Row } from 'react-bootstrap';
 import CardSubtitles from '../components/CardSubtitles';
 import SearchForm from '../components/SearchForm';
 
@@ -30,7 +30,7 @@ this.setState({
 } 
 //Function update state and returns teachers filtered by category 
 categorySelected = (index) => {
-    debugger;
+
     const filteredGroups = (index!=='0')?
     this.props.groupsByUsers.filter((group)=>{
         return (String(group.category)===index) ? group : false}) :this.props.groupsByUsers ;
@@ -104,62 +104,25 @@ exitTeacherGroup=(teacherId)=>{
     
 }
     render(){
-        // const allResults = this.props.allFilter();
-        // //Create teachers cards
-        //      const teacherCards =allResults.map((teacher)=>{
-        //      const teacherCategory = this.props.allCategories.find(element =>  (element.id === teacher.categoryId));
-        //      const teacherCity = this.props.allCities.find(element =>  (element.semel_yeshuv === String(teacher.city)));
-        //      const groupObj = this.props.allGroups.find(user => (user.createdBy === teacher.id));
-           
-        //      let counter = this.countUsers(groupObj);
-        //     let findUserInList = this.changeButton(groupObj);
-             
-        //          return (
-        //      <Col className="mb-4" key={teacher.id} xs={12} sm={12} md={6} lg={3} >
-            
-        //          <Card  className="teacher-card">
-        //          <Card.Img variant="top" src={`./images/img-profile/${teacher.image}`} className="card-img"/>
-        //          <Card.Body>
-        //              <Card.Title>{teacher.name}</Card.Title>
-        //              <div className="details sm" size="sm">
-        //               <CardSubtitles text="עיר:" desc={teacherCity.name}></CardSubtitles>
-        //               <CardSubtitles text="תחום:" desc={teacherCategory.title}></CardSubtitles>
-        //               <CardSubtitles text="התמחות:" desc={teacher.desc}></CardSubtitles>
-        //              </div>                  
-        //              <Card.Text >
-        //                 {teacher.about}              
-        //              </Card.Text>
-        //              <div className="d-flex">
-        //                  <Button className={(findUserInList<0)? 'ml-auto show' : 'ml-auto hide'} size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.joinTeacherGroup(teacher.id)}>+הצטרף לקבוצה</Button>
-        //                  <Button className={(findUserInList<0)? 'ml-auto hide' : 'ml-auto show'} size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.exitTeacherGroup(teacher.id)}>-לצאת מקבוצה</Button>
-        //                  <Button className="mr-auto" size="sm" variant="outline-primary">פרטים</Button>
-        //               </div>
-        //          </Card.Body> 
-        //          <Card.Footer>
-        //          <Card.Text className="text-muted">
-        //             <small>{counter} אנשים בקבוצה</small> 
-        //              </Card.Text>
-        //          </Card.Footer>
-        //              </Card>
-        //               </Col>
-        //      )
-        //  });
-
-        ///////////////////////////////////////////
+        
         const allResults = this.allFilter();
                const groupsByUsers= allResults.map((group) => {
                 const groupCategory = this.props.allCategories.find(element =>  (element.id === group.category));
                 const groupCity = this.props.allCities.find(element =>  (element.semel_yeshuv === String(group.city)));
                const createdBy = this.props.allUsers.find(element =>  (element.id === group.createdBy))
+               let isActive= this.props.isActiveUser(group.createdBy);
+
+               let findUserInList = this.props.changeButton(group);
                 let countUsers=0;
                 const users = group.usersList.map((id) => {
                 countUsers++;
                 const userObj = this.getUserById(id)
                 return <div>{userObj.name} {userObj.email}</div>
             })
-            // let findUserInList = this.changeButton(groupObj);
+            
             
             return (
+                
                 <Col className="mb-4" key={group.id} xs={12} sm={12} md={6} lg={3} >
                     <Card  className="teacher-card">
                     <Card.Body>
@@ -172,11 +135,11 @@ exitTeacherGroup=(teacherId)=>{
                     <Card.Text >
                     {group.desc}              
                     </Card.Text>
-                      {/* <div className="d-flex">
-                          <Button className={(findUserInList<0)? 'ml-auto show' : 'ml-auto hide'} size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.joinTeacherGroup(teacher.id)}>+הצטרף לקבוצה</Button>
-                          <Button className={(findUserInList<0)? 'ml-auto hide' : 'ml-auto show'} size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.exitTeacherGroup(teacher.id)}>-לצאת מקבוצה</Button>
+                      <div className="d-flex">
+                          <Button className={(findUserInList<0)? 'ml-auto show' : 'ml-auto hide'} disabled={isActive} size="sm" variant="outline-primary" value={group.createdBy} onClick={()=>this.joinTeacherGroup(group.createdBy)}>+הצטרף לקבוצה</Button>
+                          <Button className={(findUserInList<0)? 'ml-auto hide' : 'ml-auto show'} size="sm" variant="outline-primary" value={group.createdBy} onClick={()=>this.exitTeacherGroup(group.createdBy)}>-לצאת מקבוצה</Button>
                           <Button className="mr-auto" size="sm" variant="outline-primary">פרטים</Button>
-                       </div>  */}
+                       </div> 
                   </Card.Body> 
                   <Card.Footer>
                 <Card.Text className="text-muted">

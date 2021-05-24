@@ -107,9 +107,25 @@ login = (userObj)=>{
      
     
   }
-    
-  
+  //Check if user in the list
+// return 0 if in  the list
+// else return -1
 
+changeButton = (groupObj) =>{
+    
+  if ((typeof groupObj === "object") && (this.state.activeUser)) {
+        return groupObj.usersList.findIndex(element => (element === this.state.activeUser.id));       
+}
+return -1;
+}
+  
+isActiveUser=(user)=>{
+  if(this.state.activeUser){
+    if (this.state.activeUser.id === user)
+     {return true}
+  }
+  return false;
+}
   render() {
 
 console.log(this.state.groupsByUsers)
@@ -138,7 +154,8 @@ console.log(this.state.groupsByUsers)
          activeUser={this.state.activeUser}
          joinTeacher={this.joinTeacher}
          exitTeacher={this.exitTeacher}
-
+        changeButton={this.changeButton}
+        isActiveUser={this.isActiveUser}
          ></Teachers>
       </Route>
       <Route exact path='/groups'>
@@ -152,7 +169,8 @@ console.log(this.state.groupsByUsers)
          activeUser={this.state.activeUser}
          joinTeacher={this.joinTeacher}
          exitTeacher={this.exitTeacher}
-
+         changeButton={this.changeButton}
+         isActiveUser={this.isActiveUser}
         ></Groups>
       </Route>
       <Route exact path='/user'>

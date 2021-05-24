@@ -84,17 +84,7 @@ countUsers = (groupObj) =>{
 }
 return 0;
 }
-//Check if user in the list
-// return 0 if in  the list
-// else return -1
 
-changeButton = (groupObj) =>{
-    
-    if ((typeof groupObj === "object") && (this.props.activeUser)) {
-          return groupObj.usersList.findIndex(element => (element === this.props.activeUser.id));       
-}
-return -1;
-}
 
 exitTeacherGroup=(teacherId)=>{
     this.props.exitTeacher(teacherId);
@@ -111,7 +101,9 @@ exitTeacherGroup=(teacherId)=>{
             const groupObj = this.props.allGroups.find(user => (user.createdBy === teacher.id));
           
             let counter = this.countUsers(groupObj);
-           let findUserInList = this.changeButton(groupObj);
+           let findUserInList = this.props.changeButton(groupObj);
+          let isActive= this.props.isActiveUser(teacher.id);
+         
             
                 return (
             <Col className="mb-4" key={teacher.id} xs={12} sm={12} md={6} lg={3} >
@@ -129,7 +121,8 @@ exitTeacherGroup=(teacherId)=>{
                        {teacher.about}              
                     </Card.Text>
                     <div className="d-flex">
-                        <Button className={(findUserInList<0)? 'ml-auto show' : 'ml-auto hide'} size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.joinTeacherGroup(teacher.id)}>+הצטרף לקבוצה</Button>
+                    {/* disabled={isActive} */}
+                        <Button className={(findUserInList<0)? 'ml-auto show' : 'ml-auto hide'} disabled={isActive}  size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.joinTeacherGroup(teacher.id)}>+הצטרף לקבוצה</Button>
                         <Button className={(findUserInList<0)? 'ml-auto hide' : 'ml-auto show'} size="sm" variant="outline-primary" value={teacher.id} onClick={()=>this.exitTeacherGroup(teacher.id)}>-לצאת מקבוצה</Button>
                         <Button className="mr-auto" size="sm" variant="outline-primary">פרטים</Button>
                      </div>
