@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/skillshare/static/css/main.1e47c59e.chunk.css",
-    "main.js": "/skillshare/static/js/main.4f9d05ef.chunk.js",
-    "main.js.map": "/skillshare/static/js/main.4f9d05ef.chunk.js.map",
+    "main.js": "/skillshare/static/js/main.337fd4e8.chunk.js",
+    "main.js.map": "/skillshare/static/js/main.337fd4e8.chunk.js.map",
     "runtime-main.js": "/skillshare/static/js/runtime-main.e49ef337.js",
     "runtime-main.js.map": "/skillshare/static/js/runtime-main.e49ef337.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/skillshare/static/css/2.4c97ca4f.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.c27ce4c1.chunk.js",
     "static/css/main.1e47c59e.chunk.css",
-    "static/js/main.4f9d05ef.chunk.js"
+    "static/js/main.337fd4e8.chunk.js"
   ]
 }
