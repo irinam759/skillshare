@@ -9,8 +9,7 @@ class SearchForm extends React.Component{
         this.state = {
             searchCity:'',
             cityResults:[],
-            newString: '',
-            results: []
+            newString: ''
         }
     }   
 
@@ -58,23 +57,26 @@ class SearchForm extends React.Component{
     }
 
     searchTextChanged =(newText) => {
-         
-        // this.props.allResults.filter  
-     
-        this.setState({
-            newString:newText,
-            results:  this.props.allTeachers
-        //     this.props.allResults
-        //     .filter((user)=>user.desc.includes(newText) || user.name.includes(newText))
-         })                
         console.log('new string: '+ newText)
+        let filterFreeSearch = this.props.allTeachers;
+        // this.props.allResults.filter  
+     if(newText){
+         filterFreeSearch =  this.props.allTeachers.filter((user)=>user.about.includes(newText));
         
+        //     .filter((user)=>user.desc.includes(newText) || user.name.includes(newText))
+         
+        }             
         
-           
+        this.setState({
+            newString:newText
+        })
+        
+         this.props.freeSearch(filterFreeSearch);  
     }
 
     render(){
-        console.log('new results: '+  this.props.allResults)
+        console.log('all teachers: '+  this.props.allTeachers)
+        console.log('new results : '+  this.state.results)
         // Map all study categories
         // Sort by title
         const studyCategories = this.props.allCategories
@@ -102,7 +104,7 @@ class SearchForm extends React.Component{
                 results={this.state.results}
                 placeholder='חפש לפי שם או התמחות'
                 onSearchChanged={this.searchTextChanged}
-                onResultSelected='{this.addMovie}'
+                onResultSelected='{}'
                    
                 />
             </Form.Group>

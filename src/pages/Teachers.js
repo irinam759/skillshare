@@ -13,6 +13,7 @@ class Teachers extends React.Component{
             resultsByCity:[],
             chosenCity:0,
             chosenCategory:0,
+            resultsFreeSearch:[]
 
             
         }
@@ -39,6 +40,18 @@ categorySelected = (index) => {
     this.setState({
          resultsByCategory: filteredTeachers,
          chosenCategory:index
+    })
+} 
+
+// Func results by free search
+freeSearch = (arr) => {
+    console.log('teacher new arr' + arr)
+    // const filteredTeachers = (index!=='0')?
+    // this.props.allTeachers.filter((teacher)=>{
+    //     return (String(teacher.categoryId)===index) ? teacher : false}) :this.props.allTeachers ;
+   
+    this.setState({
+        resultsFreeSearch:arr
     })
 } 
 
@@ -151,7 +164,8 @@ exitTeacherGroup=(teacherId)=>{
                 allCities={this.props.allCities}
                 onCitySelected = {this.citySelected}
                 onCategorySelected = {this.categorySelected}
-                allTeachers={this.allTeachers}
+                allTeachers={this.props.allTeachers}
+                freeSearch={this.freeSearch}
                 ></SearchForm> 
              
                 <Row className="">
