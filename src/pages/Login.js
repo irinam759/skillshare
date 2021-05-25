@@ -80,7 +80,7 @@ class Login extends React.Component{
                     <Button type="button" onClick={this.handleLogin} variant="outline-primary">התחבר</Button>
                     </Col>
                 </Form.Group>
-                <Link to ='/signup'>הרשם</Link>
+                <Link to ='#/signup'>הרשם</Link>
             </Form>
             </div>
         )
