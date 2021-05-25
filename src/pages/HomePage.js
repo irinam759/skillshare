@@ -15,7 +15,7 @@ class HomePage extends React.Component{
 
 // Function checking if 
 checkLogin=()=>{
-    window.location.href = '/#/signup';
+    window.location.href = '#/signup';
 }
 
     render(){
