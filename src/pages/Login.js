@@ -36,7 +36,7 @@ class Login extends React.Component{
         if(foundUser){
             this.props.login(foundUser);
             console.log('in login page ' + foundUser)
-            window.location.href = '/#/';
+            window.location.href = '#/';
         }
        
         else{
